@@ -1,19 +1,47 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Button from 'react-bootstrap/Button';
+import Nav from 'react-bootstrap/Nav';
+import addEncomenda from '../images/icons/new-event-icon.png';
+import addFicha from '../images/icons/new-recipe-icon.png';
+import addCliente from '../images/icons/new-client-icon.png';
+import Header from '../components/Header';
 
 export default function Home() {
   return (
     <div>
-      Home
-      {/* <nav>
-        <Link to="/encomendas/add">Adicionar nova encomenda</Link>
-        <Link to="/fichas-tecnicas/add">Adicionar nova ficha técnica</Link>
-        <Link to="/clientes/add">Adicionar novo cliente</Link>
-      </nav> */}
-
-      <Link to="/encomendas">Agenda de Encomendas</Link>
-      <Link to="fichas-tecnicas">Fichas Técnicas</Link>
-      <Link to="clientes">Clientes</Link>
+      <Header />
+      <Nav activeKey="/home">
+        <Nav.Item>
+          <Nav.Link href="/encomendas/add">
+            <img alt="Add encomenda" src={addEncomenda} height="100" />
+            Adicionar nova encomenda
+          </Nav.Link>
+        </Nav.Item>
+        <Nav.Item>
+          <Nav.Link href="/fichas-tecnicas/add">
+            <img alt="Add encomenda" src={addFicha} height="100" />
+            Adicionar nova ficha técnica
+          </Nav.Link>
+        </Nav.Item>
+        <Nav.Item>
+          <Nav.Link href="/fichas-tecnicas/add">
+            <img alt="Add encomenda" src={addCliente} height="100" />
+            Adicionar novo cliente
+          </Nav.Link>
+        </Nav.Item>
+      </Nav>
+      <>
+        <Button className="button-laranja" size="1g" block>
+          <Link to="/encomendas">Agenda de Encomendas</Link>
+        </Button>
+        <Button className="button-laranja" size="1g" block>
+          <Link to="fichas-tecnicas">Fichas Técnicas</Link>
+        </Button>
+        <Button className="button-laranja" size="1g" block>
+          <Link to="clientes">Clientes</Link>
+        </Button>
+      </>
     </div>
   )
 };
