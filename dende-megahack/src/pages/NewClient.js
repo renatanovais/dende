@@ -10,7 +10,7 @@ export default function NewClient() {
     <div>
       <Header />
       <h1>Cadastrar cliente</h1>
-      <Form>
+      <Form className="form-container">
         <Form.Row>
           <Form.Group>
             <Form.Label>Nome completo:</Form.Label>
