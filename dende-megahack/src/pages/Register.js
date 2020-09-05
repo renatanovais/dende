@@ -56,7 +56,7 @@ function Register() {
         </Form.Group>
 
         <Form.Control placeholder="URL da Imagem do seu Produto" />
-        <Link to="https:/">Saiba como obter a URL da sua imagem</Link>
+        <Link to="https://pt-br.imgbb.com/">Saiba como obter a URL da sua imagem</Link>
       </Form>
       <Form.Group>
         <Button className="button-verde" type="button">
