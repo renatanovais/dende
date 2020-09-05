@@ -5,6 +5,7 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 
 function Register() {
+  
   return (
     <React.Fragment>
       <Header />
@@ -41,7 +42,7 @@ function Register() {
           </Form.Group>
 
           <Form.Group>
-            <Form.Check type="checkbox" label="Check" />
+            <Form.Check required type="checkbox" label="Check" />
           </Form.Group>
         </Form.Row>
 
