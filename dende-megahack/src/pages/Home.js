@@ -11,20 +11,20 @@ export default function Home() {
   return (
     <div>
       <Header />
-      <Nav activeKey="/home" className="add-buttons">
-          <Nav.Item className="single-add-button">
+      <Nav activeKey="/home" className="buttons-add-container">
+          <Nav.Item className="button-add">
             <Nav.Link href="/encomendas/add">
               <img alt="Add encomenda" src={addEncomenda} height="95" />
               <p>Adicionar encomenda</p>
           </Nav.Link>
           </Nav.Item>
-          <Nav.Item className="single-add-button">
+          <Nav.Item className="button-add">
             <Nav.Link href="/fichas-tecnicas/add">
               <img alt="Add encomenda" src={addFicha} height="95" />
             <p>Adicionar ficha técnica</p>
           </Nav.Link>
           </Nav.Item>
-          <Nav.Item className="single-add-button">
+          <Nav.Item className="button-add">
             <Nav.Link href="/fichas-tecnicas/add">
               <img alt="Add encomenda" src={addCliente} height="95" />
               <p>Adicionar cliente</p>
