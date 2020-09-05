@@ -23,7 +23,34 @@ body {
 }
 
 .App-logo {
-  height: 60vmin;
+  height: 50vh;
+}
+
+.buttons-add-container {
+  display: flex;
+  flex-flow: row;
+  font-size: 20px;
+  justify-content: space-around;
+  margin: 10vh 45vh 5vh;
+}
+
+.button-add {
+  display: flex;
+  flex-direction: column;
+}
+
+.button-laranja {
+  background-color: var(--laranja-dende);
+  border-color: var(--laranja-dende);
+  height: 3em;
+  margin-bottom: 2em;
+}
+
+.button-laranja:hover {
+  background-color: var(--verde-dende);
+  border-color: var(--verde-dende);
+  height: 3em;
+  margin-bottom: 2em;
 }
 
 .button-verde {
@@ -42,27 +69,14 @@ body {
   width: 5em;
 }
 
-.button-laranja {
-  background-color: var(--laranja-dende);
-  border-color: var(--laranja-dende);
-  height: 3em;
-  margin-bottom: 2em;
-}
-
-.button-laranja:hover {
-  background-color: var(--verde-dende);
-  border-color: var(--verde-dende);
-  height: 3em;
-  margin-bottom: 2em;
-}
-
-.button-azul {
-  background-color: var(--azul-dende);
-  border-color: var(--azul-dende);
+.login-container {
+  display: flex;
+  flex-flow: column;
+  margin: 0 25vh;
 }
 
 .login-form {
-  width: 50%;
+  width: 50vh;
   margin: 10px auto;
 }
 
@@ -72,7 +86,7 @@ body {
   display: flex;
   font-size: 16pt;
   justify-content: space-between;
-  padding: 1em 25em 1em;
+  padding: 1vh 55vh 1vh;
 }
 
 .header-configs {
@@ -81,29 +95,11 @@ body {
 }
 
 .header-configs p {
-  margin-right: 1em;
-  margin-top: 0.6em;
-}
-
-.add-buttons {
-  display: flex;
-  flex-flow: row;
-  font-size: 20px;
-  justify-content: space-around;
-  margin: 5em 20em 1em;
-}
-
-.single-add-button {
-  display: flex;
-  flex-direction: column;
+  margin-right: 1vh;
+  margin-top: 0.6vh;
 }
 
 .home-buttons {
-  margin: 5em 25em 1em;
+  margin: 5vh 50vh 1vh;
 }
 
-.login-container {
-  display: flex;
-  flex-flow: column;
-  margin: 0 25em;
-}
