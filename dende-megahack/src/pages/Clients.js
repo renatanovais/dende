@@ -1,7 +1,25 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
-export default function Clients() {
+// se os dados viessem de uma API própria
+// teria um useEffect(() => getClientsFromAPI, [])
+
+function Clients(props) {
+  const { clients } = props;
   return (
-    <div>Lista de Clientes</div>
+    <div>
+      <h1>Lista de Clientes</h1>
+      <div>
+        {clients.map((client) => (
+          <ClientCard key={client.name} />
+        ))}
+      </div>
+    </div>
   )
 };
+
+const mapStateToProps = (state) => ({
+  clients: state.clientsReducer.clients
+});
+
+export default connect(mapStateToProps)(Clients);
