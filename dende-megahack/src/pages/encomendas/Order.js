@@ -10,6 +10,7 @@ function Order() {
   const [date, setDate] = useState();
   const [delivery, setDelivery] = useState();
   const [details, setDetails] = useState();
+  const [count, setCounter] = useState(1);
 
   return (
     <div>
@@ -17,8 +18,8 @@ function Order() {
       <h3>Agendar Encomenda</h3>
       <div>
         <Form>
-          <ProductInput />
-          <Button className="button-verde">
+          {/* {if (count === 1) <ProductInput />} */}
+          <Button className="button-verde" onClick={(e) => setCounter(count + 1)}>
             + produto
           </Button>
           <Form.Group>
@@ -31,7 +32,7 @@ function Order() {
           </Form.Group>
           <Form.Group>
             <Form.Label>Escolha a opção de entrega</Form.Label>
-            <Form.Control as="select">
+            <Form.Control as="select" onChange={(e) => (e.target.value)}>
               <option value="">Selecione</option>
               <option value="entregar">Entregar</option>
               <option value="buscar">Buscar</option>
