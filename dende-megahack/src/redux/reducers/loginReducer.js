@@ -5,7 +5,7 @@ const initialState = {
   password: '',
 }
 
-export function loginReducer(state = initialState, action) {
+export default function loginReducer(state = initialState, action) {
   switch (action.type) {
     case DO_LOGIN:
       return {

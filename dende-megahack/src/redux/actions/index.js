@@ -5,3 +5,11 @@ export const doLogin = (email, senha) => ({
   email,
   senha,
 });
+
+export const NEW_PRODUCT = 'NEW_PRODUCT';
+
+export const newProduct = (product, quantity) => ({
+  type: NEW_PRODUCT,
+  product,
+  quantity,
+})
