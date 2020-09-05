@@ -1,10 +1,10 @@
 import React from 'react';
-import { connect } from 'react-redux';
+// import { connect } from 'react-redux';
 
 // se os dados viessem de uma API própria
 // teria um useEffect(() => getClientsFromAPI, [])
 
-export function Clients(props) {
+export default function Clients(props) {
 //  const { clients } = props;
   return (
     <div>
