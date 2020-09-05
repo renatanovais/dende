@@ -16,18 +16,24 @@ function Login(props) {
       <div>
         <img className="App-logo" alt="Dende" src={logo} />
       </div>
-      <Form>
-        <Form.Group controlId="formLogin">
-          <Form.Control className="login-form" type="email" placeholder="Email..." onChange={(e) => setEmail(e.target.value)} />
-        </Form.Group>
-        <Form.Group controlId="formLogin">
-          <Form.Control className="login-form" type="password" placeholder="Senha..." onChange={(e) => setSenha(e.target.value)} />
-        </Form.Group>
-        <Button className="button-verde" type="button" onClick={() => login(email, senha)} >
-          Entrar
-        </Button>
-      </Form>
-      <Link to="/home">Link temporário para home</Link>
+      <div className="login-container">
+        <Form>
+          <Form.Group controlId="formLogin">
+            <Form.Label>E-mail:</Form.Label>
+            <Form.Control className="login-form" type="email" placeholder="Email" onChange={(e) => setEmail(e.target.value)} />
+            <Form.Text className="text-muted">
+              Seu e-mail está seguro conosco. Não iremos compartilhar seus dados.
+            </Form.Text>
+          </Form.Group>
+          <Form.Group controlId="formLogin">
+            <Form.Label>Senha:</Form.Label>
+            <Form.Control className="login-form" type="password" placeholder="Senha" onChange={(e) => setSenha(e.target.value)} />
+          </Form.Group>
+          <Button className="button-verde" type="button" onClick={() => login(email, senha)} >
+            <Link to="/home">Entrar</Link>
+          </Button>
+        </Form>
+      </div>
     </React.Fragment>
   )
 };

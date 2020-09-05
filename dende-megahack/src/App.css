@@ -1,32 +1,62 @@
 :root {
-  --laranja-dende: #F6833C;
-  --azul-dende: #609BD2;
-  --verde-dende: #31B9A5;
-  --verde-dois-dende: #61C190;
-  --amarelo-dende: #FFD800;
+  --laranja-dende: #f6833c;
+  --azul-dende: #609bd2;
+  --verde-dende: #31b9a5;
+  --verde-dois-dende: #61c190;
+  --amarelo-dende: #ffd800;
+  --cinza-claro: #e5e5e5;
+}
+
+a {
+  color: black;
+}
+
+a:hover {
+  color: gray;
+  text-decoration: none;
 }
 
 body {
-  max-width: 60%;
   margin: 0 auto;
   text-align: center;
+  font-size: 14pt;
 }
 
 .App-logo {
   height: 60vmin;
 }
 
-.button-verde { 
+.button-verde {
   background-color: var(--verde-dende);
   border-color: var(--verde-dende);
+  font-size: 16pt;
+  height: 2.5em;
+  width: 5em;
 }
 
-.button-laranja { 
+.button-verde:hover {
   background-color: var(--laranja-dende);
   border-color: var(--laranja-dende);
+  margin-bottom: 2em;
+  height: 2.5em;
+  width: 5em;
 }
 
-.button-azul { 
+.button-laranja {
+  background-color: var(--laranja-dende);
+  border-color: var(--laranja-dende);
+  height: 3em;
+  margin-bottom: 2em;
+}
+
+.button-laranja:hover {
+  background-color: var(--verde-dende);
+  border-color: var(--verde-dende);
+  height: 3em;
+  margin-bottom: 2em;
+}
+
+.button-azul {
   background-color: var(--azul-dende);
   border-color: var(--azul-dende);
 }
@@ -37,7 +67,43 @@ body {
 }
 
 .header-comp {
+  align-items: center;
+  background-color: var(--cinza-claro);
   display: flex;
+  font-size: 16pt;
   justify-content: space-between;
-  margin: 10px 0;
+  padding: 1em 25em 1em;
+}
+
+.header-configs {
+  display: flex;
+  flex-direction: row;
+}
+
+.header-configs p {
+  margin-right: 1em;
+  margin-top: 0.6em;
+}
+
+.add-buttons {
+  display: flex;
+  flex-flow: row;
+  font-size: 20px;
+  justify-content: space-around;
+  margin: 5em 20em 1em;
+}
+
+.single-add-button {
+  display: flex;
+  flex-direction: column;
+}
+
+.home-buttons {
+  margin: 5em 25em 1em;
+}
+
+.login-container {
+  display: flex;
+  flex-flow: column;
+  margin: 0 25em;
 }
