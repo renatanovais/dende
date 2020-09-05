@@ -1,43 +1,105 @@
 :root {
-  --laranja-dende: #F6833C;
-  --azul-dende: #609BD2;
-  --verde-dende: #31B9A5;
-  --verde-dois-dende: #61C190;
-  --amarelo-dende: #FFD800;
+  --laranja-dende: #f6833c;
+  --azul-dende: #609bd2;
+  --verde-dende: #31b9a5;
+  --verde-dois-dende: #61c190;
+  --amarelo-dende: #ffd800;
+  --cinza-claro: #e5e5e5;
+}
+
+a {
+  color: black;
+}
+
+a:hover {
+  color: gray;
+  text-decoration: none;
 }
 
 body {
-  max-width: 60%;
   margin: 0 auto;
   text-align: center;
+  font-size: 14pt;
 }
 
 .App-logo {
-  height: 60vmin;
+  height: 50vh;
 }
 
-.button-verde { 
-  background-color: var(--verde-dende);
-  border-color: var(--verde-dende);
+.buttons-add-container {
+  display: flex;
+  flex-flow: row;
+  font-size: 20px;
+  justify-content: space-around;
+  margin: 10vh 45vh 5vh;
 }
 
-.button-laranja { 
+.button-add {
+  display: flex;
+  flex-direction: column;
+}
+
+.button-laranja {
   background-color: var(--laranja-dende);
   border-color: var(--laranja-dende);
+  height: 3em;
+  margin-bottom: 2em;
 }
 
-.button-azul { 
-  background-color: var(--azul-dende);
-  border-color: var(--azul-dende);
+.button-laranja:hover {
+  background-color: var(--verde-dende);
+  border-color: var(--verde-dende);
+  height: 3em;
+  margin-bottom: 2em;
+}
+
+.button-verde {
+  background-color: var(--verde-dende);
+  border-color: var(--verde-dende);
+  font-size: 16pt;
+  height: 2.5em;
+  width: 5em;
+}
+
+.button-verde:hover {
+  background-color: var(--laranja-dende);
+  border-color: var(--laranja-dende);
+  margin-bottom: 2em;
+  height: 2.5em;
+  width: 5em;
+}
+
+.login-container {
+  display: flex;
+  flex-flow: column;
+  margin: 0 25vh;
 }
 
 .login-form {
-  width: 50%;
+  width: 50vh;
   margin: 10px auto;
 }
 
 .header-comp {
+  align-items: center;
+  background-color: var(--cinza-claro);
   display: flex;
+  font-size: 16pt;
   justify-content: space-between;
-  margin: 10px 0;
+  padding: 1vh 55vh 1vh;
 }
+
+.header-configs {
+  display: flex;
+  flex-direction: row;
+}
+
+.header-configs p {
+  margin-right: 1vh;
+  margin-top: 0.6vh;
+}
+
+.home-buttons {
+  margin: 5vh 50vh 1vh;
+}
+
