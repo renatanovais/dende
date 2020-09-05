@@ -1,3 +1,9 @@
+:root {
+  --laranja-dende: #F6833C;
+  --azul-dende: #609BD2;
+  --verde-dende: #3189A5;
+}
+
 body {
   max-width: 60%;
   margin: 0 auto;
