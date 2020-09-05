@@ -5,11 +5,13 @@ import Nav from 'react-bootstrap/Nav';
 import addEncomenda from '../images/icons/new-event-icon.png';
 import addFicha from '../images/icons/new-recipe-icon.png';
 import addCliente from '../images/icons/new-client-icon.png';
+import Header from '../components/Header';
 
 export default function Home() {
   return (
     <div>
-      <Nav>
+      <Header />
+      <Nav activeKey="/home">
         <Nav.Item>
           <Nav.Link href="/encomendas/add">
             <img alt="Add encomenda" src={addEncomenda} height="100" />
@@ -30,13 +32,13 @@ export default function Home() {
         </Nav.Item>
       </Nav>
       <>
-        <Button variant="info" size="1g" block>
+        <Button className="button-laranja" size="1g" block>
           <Link to="/encomendas">Agenda de Encomendas</Link>
         </Button>
-        <Button variant="info" size="1g" block>
+        <Button className="button-laranja" size="1g" block>
           <Link to="fichas-tecnicas">Fichas Técnicas</Link>
         </Button>
-        <Button variant="info" size="1g" block>
+        <Button className="button-laranja" size="1g" block>
           <Link to="clientes">Clientes</Link>
         </Button>
       </>

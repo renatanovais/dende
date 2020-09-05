@@ -1,7 +1,9 @@
 :root {
   --laranja-dende: #F6833C;
   --azul-dende: #609BD2;
-  --verde-dende: #3189A5;
+  --verde-dende: #31B9A5;
+  --verde-dois-dende: #61C190;
+  --amarelo-dende: #FFD800;
 }
 
 body {
@@ -12,5 +14,30 @@ body {
 
 .App-logo {
   height: 60vmin;
-  /* pointer-events: none; */
+}
+
+.button-verde { 
+  background-color: var(--verde-dende);
+  border-color: var(--verde-dende);
+}
+
+.button-laranja { 
+  background-color: var(--laranja-dende);
+  border-color: var(--laranja-dende);
+}
+
+.button-azul { 
+  background-color: var(--azul-dende);
+  border-color: var(--azul-dende);
+}
+
+.login-form {
+  width: 50%;
+  margin: 10px auto;
+}
+
+.header-comp {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
 }

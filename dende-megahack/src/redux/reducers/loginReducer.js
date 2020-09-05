@@ -11,7 +11,7 @@ export function loginReducer(state = initialState, action) {
       return {
         ...state,
         email: action.email,
-        passowrd: action.senha,
+        password: action.senha,
       };
     default:
       return state;

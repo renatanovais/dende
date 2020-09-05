@@ -18,12 +18,12 @@ function Login(props) {
       </div>
       <Form>
         <Form.Group controlId="formLogin">
-          <Form.Control type="email" placeholder="Email..." onChange={(e) => setEmail(e.target.value)} />
+          <Form.Control className="login-form" type="email" placeholder="Email..." onChange={(e) => setEmail(e.target.value)} />
         </Form.Group>
         <Form.Group controlId="formLogin">
-          <Form.Control type="password" placeholder="Senha..." onChange={(e) => setSenha(e.target.value)} />
+          <Form.Control className="login-form" type="password" placeholder="Senha..." onChange={(e) => setSenha(e.target.value)} />
         </Form.Group>
-        <Button variant="info" type="button" onClick={() => login(email, senha)} >
+        <Button className="button-verde" type="button" onClick={() => login(email, senha)} >
           Entrar
         </Button>
       </Form>
