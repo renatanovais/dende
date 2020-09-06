@@ -13,15 +13,15 @@ export default function Home() {
       <div className="buttons-add-container">
         <Link to="/encomendas/add">
           <img alt="Add encomenda" src={addEncomenda} height="95" />
-          <p>Adicionar encomenda</p>
+          <p>Adicionar <br/> encomenda</p>
         </Link>
         <Link to="/fichas-tecnicas/add">
           <img alt="Add encomenda" src={addFicha} height="95" />
-          <p>Adicionar ficha técnica</p>
+          <p>Adicionar <br/> ficha técnica</p>
         </Link>
         <Link to="/add-client">
           <img alt="Add encomenda" src={addCliente} height="95" />
-          <p>Adicionar cliente</p>
+          <p>Adicionar <br/> cliente</p>
         </Link>
       </div>
       {/* <Nav activeKey="/home" className="buttons-add-container">
