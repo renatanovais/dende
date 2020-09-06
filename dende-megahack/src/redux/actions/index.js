@@ -6,6 +6,27 @@ export const doLogin = (email, senha) => ({
   senha,
 });
 
+export const NEW_PRODUCT = 'NEW_PRODUCT';
+
+export const newProduct = (product, quantity) => ({
+  type: NEW_PRODUCT,
+  product,
+  quantity,
+})
+
+export const SCHEDULE_IT = 'SCHEDULE_IT';
+
+export const scheduleIt = (products, client, dueDate, delivery, details) => ({
+  type: SCHEDULE_IT, 
+  order: {
+    products,
+    client,
+    dueDate,
+    delivery,
+    details,
+  }
+})
+
 export const SAVE_CLIENT = 'SAVE_CLIENT';
 
 export const saveClient = (name, birthday, phone, email, address, observations, registryDate) => ({
