@@ -3,13 +3,14 @@ import Button from 'react-bootstrap/Button';
 import Header from '../../components/Header';
 import GridCalendar from '../../components/GridCalendar';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 
-export default function Calendar() {
+function Calendar(props) {
+  const { orders } = props;
   return (
     <div>
       <Header />
-      <h3>Agenda de Encomendas</h3>
-      <GridCalendar />
+      {orders.length > 0 ? orders.map((order) => <GridCalendar order={order} />) : <p>Não há encomendas</p>}
       <Button className="button-verde">
         <Link to="/encomendas/add">
         Adicionar Encomenda
@@ -18,3 +19,9 @@ export default function Calendar() {
     </div>
   )
 };
+
+const mapStateToProps = (state) => ({
+  orders: state.orderReducer.orders,
+})
+
+export default connect(mapStateToProps)(Calendar)
