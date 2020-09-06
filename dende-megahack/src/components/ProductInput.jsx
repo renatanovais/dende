@@ -8,18 +8,22 @@ import { newProduct } from '../redux/actions';
 function ProductInput(props) {
   const [product, setProduct] = useState();
   const [quantity, setQuantity] = useState();
+  const [disable, setDisable] = useState(false);
 
   return (
     <Form.Row className="row-form">
       <Form.Group id="product-input">
         <Form.Label className="label-form">Produto</Form.Label>
-        <Form.Control placeholder={props.name} onChange={(e) => setProduct(e.target.value)} />  
+        <Form.Control placeholder={props.name} onChange={(e) => setProduct(e.target.value)} disabled={disable} />  
       </Form.Group>
       <Form.Group id="qtd-input">
         <Form.Label className="label-form">Quantidade</Form.Label>
-        <Form.Control type="number" placeholder={props.qtde} onChange={(e) => setQuantity(e.target.value)} />  
+        <Form.Control type="number" placeholder={props.qtde} onChange={(e) => setQuantity(e.target.value)} disabled={disable} />  
       </Form.Group>
-      <Button className="button-verde check-input-button" onClick={() => props.saveProduct(product, quantity)}>
+      <Button className="button-verde check-input-button" onClick={() => {
+        props.saveProduct(product, quantity);
+        setDisable(!disable);
+      }}>
         <img alt="Confirmar" src={checkIcon} height="40px" />
       </Button>
     </Form.Row>
