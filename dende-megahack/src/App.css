@@ -158,6 +158,7 @@ h1, h2 {
   --verde-dois-dende: #61c190;
   --amarelo-dende: #ffd800;
   --cinza-claro: #e5e5e5;
+  --laranja-dende-transparent: #fcd1b6;
 }
 
 a {
@@ -356,11 +357,106 @@ h1, h2 {
 
 /* FIM PAG HOME */
 
+/* CSS AGENDA DE ENCOMENDAS */
+.info-calendar {
+  align-items: center;
+  display: flex;
+  font-family: 'Josefin Sans', sans-serif;
+  justify-content: space-between;
+  padding: 1vh 8vw 2vh;
+}
+
+.info-calendar .calendar-date {
+  border-bottom: 3px solid var(--laranja-dende);
+}
+
+.info-calendar .add-button-calendar {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0;
+  padding-top: 1vh;
+}
+
+.info-calendar .add-button-calendar img {
+  height: 8vh;
+}
+
+.info-calendar .add-button-calendar p {
+  font-size: 12px;
+  line-height: 12px;
+  margin-bottom: 0;
+  padding-top: 1vh;
+  text-align: center;
+}
+
 .calendar-grid {
   display: flex;
-  justify-content: space-between;
   flex-wrap: wrap;
+  justify-content: center;
+  margin: 2vh auto;
+  max-width: 90%;
 }
+
+.calendar-card {
+  background-image: linear-gradient(transparent, var(--laranja-dende-transparent), var(--laranja-dende));
+  border: none;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 15px;
+  height: 230px;
+  margin: 2vh 2vw;
+  width: 230px;
+}
+
+.calendar-card .client-name {
+  font-style: italic;
+  font-weight: 600;
+}
+
+.calendar-card .list-item {
+  background: none;
+  border-radius: 10px;
+  font-weight: 300;
+  margin-bottom: 1vh;
+  padding: 1vh 1vw 1vh 5vw;
+}
+
+.calendar-card .order-details p {
+  font-weight: 400;
+  font-style: italic;
+  margin: 2vh 0 0;
+}
+
+.calendar-card .order-details span {
+  font-weight: 300;
+  margin: 0;
+  padding: 0;
+}
+
+@media (min-width: 700px) {
+  .info-calendar {
+    padding: 2vh 10vw 2vh;
+  }
+
+  .info-calendar .calendar-date {
+    font-size: 22px;
+  }
+
+  .info-calendar .add-button-calendar img {
+    height: 10vh;
+  }
+  
+  .info-calendar .add-button-calendar p {
+    font-size: 14px;
+  }
+
+  .calendar-card .list-item {
+    padding: 1vh 1vw 1vh 3vw;
+  }
+}
+
+/* FIM CALENDARIO DE ENCOMENDAS */
 
 .label-form {
   margin: 2vh 0 0;
