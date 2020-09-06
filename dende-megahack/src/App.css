@@ -161,11 +161,6 @@ h1, h2 {
   --laranja-dende-transparent: #fcd1b6;
 }
 
-button:focus, button:active,
-input:focus, input:active {
-  outline: none;
-}
-
 a {
   color: black;
 }
@@ -542,3 +537,5 @@ h1, h2 {
   margin: 2vh 5vw;
   justify-content: space-around;
 }
+
+/* FIM PAG CADASTRAR ENCOMENDA - SEM RESPONSIVIDADE */

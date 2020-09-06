@@ -77,14 +77,14 @@ function Order(props) {
             <Form.Label className="label-form">Mais Informações</Form.Label>
             <Form.Control as="textarea" rows="4" placeholder="Detalhes ou mais informações" onChange={(e) => setDetails(e.target.value)} disabled={disableByClients} />
           </Form.Group>
-          <Button className="button-verde" disabled={buttonDisable} onClick={() => {
-            registerOrder(productList, client, date, delivery, details)
-            history.push('/encomendas');
-            clearProducts();
-          }}>
-            Agendar
-          </Button>
         </Form>
+        <Button className="button-verde" disabled={buttonDisable} onClick={() => {
+          registerOrder(productList, client, date, delivery, details)
+          history.push('/encomendas');
+          clearProducts();
+        }}>
+          Agendar
+        </Button>
       </div>
     </div>
   )
