@@ -539,3 +539,11 @@ h1, h2 {
 }
 
 /* FIM PAG CADASTRAR ENCOMENDA - SEM RESPONSIVIDADE */
+/* INICIO PAG CADASTRAR CLIENTE */
+/* CLASSES REAPROVEITADAS DO CADASTRAR ENCOMENDA:
+className="add-order-container"
+className="label-form" */
+.form-container {
+  margin: 1vh auto;
+  max-width: 80%;
+}
