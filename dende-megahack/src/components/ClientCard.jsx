@@ -1,8 +1,7 @@
 import React from 'react';
-import { connect } from 'react-redux';
 
-function ClientCard(props) {
-  const { name, birthday, phone, email, address, registryDate } = props;
+export default function ClientCard(props) {
+  const { name, birthday, phone, email, address, registryDate } = props.client;
   return (
     <div>
       <h2>{name}</h2>
@@ -14,14 +13,3 @@ function ClientCard(props) {
     </div>
   );
 }
-
-const mapStateToProps = (state) => ({
-  name: state.clientsReducer.clients[0].name,
-  birthday: state.clientsReducer.clients[0].birthday,
-  phone: state.clientsReducer.clients[0].phone,
-  email: state.clientsReducer.clients[0].email,
-  address: state.clientsReducer.clients[0].address,
-  registryDate: state.clientsReducer.clients[0].registryDate,
-});
-
-export default connect(mapStateToProps)(ClientCard);

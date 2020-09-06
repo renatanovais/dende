@@ -1,19 +1,8 @@
 import { SAVE_CLIENT } from '../actions';
 
-const clients = [];
-
 const initialState = {
-  clients:
-    [{
-      name: '',
-      birthday: '',
-      phone: '',
-      email: '',
-      address: '',
-      observations: '',
-      registryDate: '',
-    }]
-}
+  clients: []
+};
 
 export function clientsReducer(state = initialState, action) {
   switch (action.type) {
@@ -21,7 +10,7 @@ export function clientsReducer(state = initialState, action) {
       return {
         ...state,
         clients:
-          [...clients,
+          [...state.clients,
           {
             name: action.name,
             birthday: action.birthday,

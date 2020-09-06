@@ -12,9 +12,12 @@ function Clients(props) {
       <Header />
       <h1>Lista de Clientes</h1>
       <div>
-        {clients.map((client) => (
-          <ClientCard key={client.name} />
-        ))}
+        {clients.length === 0 ? <p>Nenhum cliente cadastrado</p>
+        :
+        clients.map((client) => (
+          <ClientCard key={client.name} client={client} clients={clients} />
+        ))
+        }
       </div>
       <h2><Link to="/add-client">Cadastrar novo cliente</Link></h2>
     </div>
