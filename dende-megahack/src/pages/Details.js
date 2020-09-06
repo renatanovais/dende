@@ -5,6 +5,7 @@ import Button from 'react-bootstrap/Button';
 import Dropdown from 'react-bootstrap/Dropdown';
 
 function Details() {
+  
   return (
     <React.Fragment>
       <Header />
@@ -22,7 +23,7 @@ function Details() {
           </Form.Group>
         </Form.Row>
       </React.Fragment>
-      
+
       <Form.Group>
         <Form.Label>Rendimento</Form.Label>
         <Form.Control />

@@ -1,11 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 
 function Register() {
-  
   return (
     <React.Fragment>
       <Header />
@@ -23,7 +22,6 @@ function Register() {
           </Form.Group>
         </Form.Row>
       </React.Fragment>
-
       <Form>
         <Form.Row>
           <Form.Group>
@@ -37,8 +35,13 @@ function Register() {
           </Form.Group>
 
           <Form.Group>
-            <Form.Label>Unidade de medida</Form.Label>
-            <Form.Control placeholder="Unidade" />
+            <Form.Label>Unidade de Medida</Form.Label>
+            <Form.Control placeholder="Unidade" value={unidade} onChange={handleInputChange} />
+          </Form.Group>
+
+          <Form.Group>
+            <Form.Label>Preço de Aquisição</Form.Label>
+            <Form.Control placeholder="Preço" />
           </Form.Group>
 
           <Form.Group>
@@ -67,4 +70,5 @@ function Register() {
     </React.Fragment>
   );
 }
+
 export default Register;
