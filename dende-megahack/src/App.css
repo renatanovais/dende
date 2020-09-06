@@ -272,6 +272,44 @@ h1, h2 {
 
 /* FIM PAG LOGIN */
 
+/* HEADER */
+.header-comp {
+  align-items: center;
+  background-color: var(--cinza-claro);
+  display: flex;
+  font-size: 12pt;
+  justify-content: space-around;
+  /* padding: 1vh 55vh 1vh; */
+  padding: 1vh 5vw;
+}
+
+.header-comp #logo-img {
+  height: 50px;
+}
+
+.header-comp #configs-img {
+  margin-left: 1vh;
+  height: 35px;
+}
+
+.header-configs {
+  display: flex;
+  flex-direction: row;
+}
+
+.header-configs p {
+  /* background-color: var(--amarelo-dende); */
+  border-radius: 10px;
+  color: var(--laranja-dende);
+  font-size: 12px;
+  margin-right: 1vh;
+  margin-top: 3vh;
+  padding: 0 1vw;
+}
+
+/* FIM HEADER */
+
+/* PAG HOME */
 /* .form-container {
   margin: 5vh 50vh 1vh;
 } */
@@ -287,26 +325,6 @@ h1, h2 {
 .button-add {
   display: flex;
   flex-direction: column;
-}
-
-
-.header-comp {
-  align-items: center;
-  background-color: var(--cinza-claro);
-  display: flex;
-  font-size: 16pt;
-  justify-content: space-between;
-  padding: 1vh 55vh 1vh;
-}
-
-.header-configs {
-  display: flex;
-  flex-direction: row;
-}
-
-.header-configs p {
-  margin-right: 1vh;
-  margin-top: 0.6vh;
 }
 
 .home-buttons {
