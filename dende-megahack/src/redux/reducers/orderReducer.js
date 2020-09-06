@@ -16,7 +16,7 @@ export default function orderReducer(state = initialState, action) {
         ...state,
         product: action.product,
         quantity: action.quantity,
-        products: [...state.products, {product: action.product, quantity: action.quantity}],
+        products: [...state.products, {product: action.product, quantity: action.quantity}]
       };
     default:
       return state;

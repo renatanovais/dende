@@ -1,11 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import Form from 'react-bootstrap/Form';
 import ProductInput from '../../components/ProductInput';
 import Header from '../../components/Header';
 import Button from 'react-bootstrap/esm/Button';
 
-function Order() {
+function Order(props) {
+  const { productList } = props;
+
   const [client, setClient] = useState();
   const [date, setDate] = useState();
   const [delivery, setDelivery] = useState();
@@ -18,10 +20,12 @@ function Order() {
       <h3>Agendar Encomenda</h3>
       <div>
         <Form>
-          {/* {if (count === 1) <ProductInput />} */}
-          <Button className="button-verde" onClick={(e) => setCounter(count + 1)}>
-            + produto
-          </Button>
+          <ProductInput name="Produto" qtde="Quantidade" />
+          {(productList.length > 0) ? (
+            <div>
+              {productList.map((product, i) => i > 0 && i < count ? <ProductInput name={product.product} qtde={product.quantity} /> : <ProductInput name="Produto" qtde="Quantidade" /> )}
+            </div>
+          ): false}
           <Form.Group>
             <Form.Label>Cliente</Form.Label>
             <Form.Control placeholder="Nome do Cliente" onChange={(e) => setClient(e.target.value)} />
@@ -52,7 +56,7 @@ function Order() {
 }
 
 const mapStateToProps = (state) => ({
-  teste: state.loginReducer.email,
+  productList: state.orderReducer.products,
 })
 
 export default connect(mapStateToProps)(Order);

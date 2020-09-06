@@ -12,11 +12,11 @@ function ProductInput(props) {
     <Form.Row>
       <Form.Group>
         <Form.Label>Produto</Form.Label>
-        <Form.Control placeholder="Nome do Produto" onChange={(e) => setProduct(e.target.value)} />  
+        <Form.Control placeholder={props.name} onChange={(e) => setProduct(e.target.value)} />  
       </Form.Group>
       <Form.Group>
         <Form.Label>Quantidade</Form.Label>
-        <Form.Control type="number" placeholder="Quantidade" onChange={(e) => setQuantity(e.target.value)} />  
+        <Form.Control type="number" placeholder={props.qtde} onChange={(e) => setQuantity(e.target.value)} />  
       </Form.Group>
       <Button className="button-verde" onClick={() => props.saveProduct(product, quantity)}>
         V

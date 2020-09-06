@@ -12,4 +12,8 @@ export const newProduct = (product, quantity) => ({
   type: NEW_PRODUCT,
   product,
   quantity,
+  resume: {
+    product,
+    quantity,
+  }
 })
