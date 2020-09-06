@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
-import Nav from 'react-bootstrap/Nav';
 import addEncomenda from '../images/icons/new-event-icon.png';
 import addFicha from '../images/icons/new-recipe-icon.png';
 import addCliente from '../images/icons/new-client-icon.png';
@@ -11,7 +10,21 @@ export default function Home() {
   return (
     <div>
       <Header />
-      <Nav activeKey="/home" className="buttons-add-container">
+      <div className="buttons-add-container">
+        <Link to="/encomendas/add">
+          <img alt="Add encomenda" src={addEncomenda} height="95" />
+          <p>Adicionar <br/> encomenda</p>
+        </Link>
+        <Link to="/fichas-tecnicas/add">
+          <img alt="Add encomenda" src={addFicha} height="95" />
+          <p>Adicionar <br/> ficha técnica</p>
+        </Link>
+        <Link to="/add-client">
+          <img alt="Add cliente" src={addCliente} height="95" />
+          <p>Adicionar <br/> cliente</p>
+        </Link>
+      </div>
+      {/* <Nav activeKey="/home" className="buttons-add-container">
         <Nav.Item className="button-add">
           <Nav.Link href="/encomendas/add">
             <img alt="Add encomenda" src={addEncomenda} height="95" />
@@ -32,17 +45,23 @@ export default function Home() {
             </Link>
           </Nav.Link>
         </Nav.Item>
-      </Nav>
+      </Nav> */}
       <div className="home-buttons">
-        <Button className="button-laranja" size="1g" block>
-          <Link to="/encomendas">Agenda de Encomendas</Link>
-        </Button>
-        <Button className="button-laranja" size="1g" block>
-          <Link to="fichas-tecnicas">Fichas Técnicas</Link>
-        </Button>
-        <Button className="button-laranja" size="1g" block>
-          <Link to="clientes">Clientes</Link>
-        </Button>
+        <Link to="/encomendas">
+          <Button className="button-laranja" size="1g" block>
+            Agenda de Encomendas
+          </Button>
+        </Link>
+        <Link to="fichas-tecnicas">
+          <Button className="button-laranja" size="1g" block>
+            Fichas Técnicas
+          </Button>
+        </Link>
+        <Link to="clientes">
+          <Button className="button-laranja" size="1g" block>
+            Clientes
+          </Button>
+        </Link>
       </div>
     </div>
   )

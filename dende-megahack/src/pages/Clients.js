@@ -3,15 +3,21 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Header from '../components/Header';
 import ClientCard from '../components/ClientCard';
-
+import addCliente from '../images/icons/new-client-icon.png';
 
 function Clients(props) {
   const { clients } = props;
   return (
     <div>
       <Header />
-      <h1>Lista de Clientes</h1>
-      <div>
+      <div className="info-calendar">
+        <h4 className="list-title">Lista de Clientes</h4>
+        <Link className="add-button-calendar" to="/add-client">
+          <img alt="Add cliente" src={addCliente} />
+          <p>Adicionar <br/> cliente</p>
+        </Link>
+      </div>
+      <div className="client-grid">
         {clients.length === 0 ? <p>Nenhum cliente cadastrado</p>
         :
         clients.map((client) => (
@@ -19,7 +25,6 @@ function Clients(props) {
         ))
         }
       </div>
-      <h2><Link to="/add-client">Cadastrar novo cliente</Link></h2>
     </div>
   )
 };

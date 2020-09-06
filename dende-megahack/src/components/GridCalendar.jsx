@@ -1,31 +1,24 @@
 import React from 'react';
-// import { connect } from 'react-redux';
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
 import ListGroupItem from 'react-bootstrap/ListGroupItem';
 
 export default function GridCalendar(props) {
   const { order } = props;
-
+  const dateFormat = order.dueDate.split('-').map((num) => Number(num));
   return (
-    <Card>
+    <Card className="calendar-card">
       <Card.Body>
-        <Card.Title>{order.client}</Card.Title>
-        <Card.Subtitle className="mb-2 text-muted">{order.dueDate}</Card.Subtitle>
-        Lista de produtos:
-        <ListGroup className="list-group-flush">
-          {order.products.map((product) => <ListGroupItem>{product.product} - {product.quantity}</ListGroupItem>)}
-        </ListGroup>
-        <Card.Text>
-          {order.details}
+        <Card.Title className="client-name">{order.client}</Card.Title>
+        <Card.Subtitle className="mb-2 text-muted">{`${order.delivery}: ${dateFormat[2]} / ${dateFormat[1]} / ${dateFormat[0]}`}</Card.Subtitle>
+        {/* <ListGroup className="list-group-flush"> */}
+          {order.products.map((product) => <ListGroupItem className="list-item">{product.product} - {product.quantity} unid.</ListGroupItem>)}
+        {/* </ListGroup> */}
+        <Card.Text className="order-details">
+          <p>Detalhes:</p>
+          <span>{order.details}</span>
         </Card.Text>
       </Card.Body>
     </Card>
   )
 }
-
-// const mapStateToProps = (state) => ({
-//   orders: state.orderReducer.orders,
-// })
-
-// export default connect(mapStateToProps)(GridCalendar);
