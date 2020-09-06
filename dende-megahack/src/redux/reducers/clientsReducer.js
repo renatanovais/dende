@@ -26,3 +26,6 @@ export function clientsReducer(state = initialState, action) {
       return state;
   }
 }
+
+//  PARA TESTAR DROPDOWN NA PÁGINA DE AGENDAR ENCOMENDA
+// {name: 're'}, {name: 'ross'}, {name: 'ana'}, {name: 'bill'}, {name: 'bianca'}, {name: 'beatriz'}

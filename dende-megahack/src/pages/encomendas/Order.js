@@ -1,20 +1,29 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import Form from 'react-bootstrap/Form';
+import { useHistory, Link } from 'react-router-dom';
 import ProductInput from '../../components/ProductInput';
 import Header from '../../components/Header';
 import Button from 'react-bootstrap/esm/Button';
 import { scheduleIt, clearProduct } from '../../redux/actions';
-import { useHistory } from 'react-router-dom';
 
 function Order(props) {
   const history = useHistory();
-  const { productList, registerOrder, clearProducts } = props;
+  const { productList, registerOrder, clearProducts, clients } = props;
 
   const [client, setClient] = useState();
   const [date, setDate] = useState();
   const [delivery, setDelivery] = useState();
   const [details, setDetails] = useState();
+
+  const dropdownClients = (param) => {
+    return (
+      <Form.Control as="select" title="Clientes" onChange={(e) => setClient(e.target.value)}>
+        <option value="">Clientes</option>
+        {param.map((client, i) => <option key={i} value={client.name}>{client.name}</option>)}
+      </Form.Control>
+    );
+  }
 
   return (
     <div>
@@ -22,16 +31,15 @@ function Order(props) {
       <h3>Agendar Encomenda</h3>
       <div>
         <Form>
+          {clients.length > 0 ? dropdownClients(clients) :
+            <Button className="button-verde"><Link to="/add-client">Adicionar Cliente</Link></Button>
+          }
           <ProductInput name="Produto" qtde="Quantidade" />
           {(productList.length > 0) ? (
             <div>
               {productList.map((product, i) => i > 0 && i < 1 ? <ProductInput name={product.product} qtde={product.quantity} /> : <ProductInput name="Produto" qtde="Quantidade" /> )}
             </div>
           ): false}
-          <Form.Group>
-            <Form.Label>Cliente</Form.Label>
-            <Form.Control placeholder="Nome do Cliente" onChange={(e) => setClient(e.target.value)} />
-          </Form.Group>
           <Form.Group>
             <Form.Label>Prazo</Form.Label>
             <Form.Control type="date" onChange={(e) => setDate(e.target.value)} />
@@ -63,6 +71,7 @@ function Order(props) {
 
 const mapStateToProps = (state) => ({
   productList: state.orderReducer.products,
+  clients: state.clientsReducer.clients,
 })
 
 const mapDispatchToProps = (dispatch) => ({
