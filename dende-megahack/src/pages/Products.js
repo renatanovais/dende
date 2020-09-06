@@ -8,7 +8,6 @@ import Button from 'react-bootstrap/Button';
 import { saveItem } from '../redux/actions';
 import { useHistory } from 'react-router-dom';
 
-
 function Register(props) {
   const history = useHistory();
   const { itemList, registerItem } = props;
@@ -19,7 +18,6 @@ function Register(props) {
   const [date, setDate] = useState();
   const [item, setItem] = useState();
 
-
   return (
     <React.Fragment>
       <Header />
@@ -29,21 +27,29 @@ function Register(props) {
         <Form.Row>
           <Form.Group>
             <Form.Label>Nome do Produto</Form.Label>
-            <Form.Control placeholder="Produto" onChange={(e) => setItem(e.target.value)}/>
+            <Form.Control placeholder="Produto" onChange={(e) => setItem(e.target.value)} />
           </Form.Group>
           <Form.Group>
             <Form.Label>Data de Cadastro</Form.Label>
-            <Form.Control type="date" onChange={(e) => setDate(e.target.value)}/>
+            <Form.Control type="date" onChange={(e) => setDate(e.target.value)} />
           </Form.Group>
         </Form.Row>
       </React.Fragment>
 
-      <InputText item="Ingrediente" qtde="Quantidade" unidade="Unidade" preco="Preço"/>
-      {(itemList.length > 0) ? (
+      <InputText item="Ingrediente" qtde="Quantidade" unidade="Unidade" preco="Preço" />
+      {itemList.length > 0 ? (
         <div>
-          {itemList.map((item) => item > 0 && item < 1 ? <InputText /> : <InputText item="Ingrediente" qtde="Quantidade" unidade="Unidade" preco="Preço" /> )}
+          {itemList.map((item) =>
+            item > 0 && item < 1 ? (
+              <InputText />
+            ) : (
+              <InputText item="Ingrediente" qtde="Quantidade" unidade="Unidade" preco="Preço" />
+            ),
+          )}
         </div>
-      ): false}
+      ) : (
+        false
+      )}
 
       <Form.Group>
         <Form.Label>Rendimento</Form.Label>
@@ -55,7 +61,10 @@ function Register(props) {
         <Form.Control as="textarea" rows="3" onChange={(e) => setPrepare(e.target.value)} />
       </Form.Group>
 
-      <Form.Control placeholder="URL da Imagem do seu Produto" onChange={(e) => setImg(e.target.value)}/>
+      <Form.Control
+        placeholder="URL da Imagem do seu Produto"
+        onChange={(e) => setImg(e.target.value)}
+      />
       <Link to="https://pt-br.imgbb.com/">Saiba como obter a URL da sua imagem</Link>
       <Form.Group>
         <Button
@@ -67,6 +76,15 @@ function Register(props) {
           }}
         >
           Ok
+        </Button>
+      </Form.Group>
+      <Form.Group>
+        <Button
+          className="button-verde"
+          type="button"
+          onClick={() => history.push('/fichas-tecnicas/details')}
+        >
+          Detalhes
         </Button>
       </Form.Group>
     </React.Fragment>
