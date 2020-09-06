@@ -1,6 +1,7 @@
-import { NEW_PRODUCT } from '../actions';
+import { NEW_PRODUCT, SCHEDULE_IT } from '../actions';
 
 const initialState = {
+  orders: [],
   product: '',
   quantity: 0,
   products: [],
@@ -18,6 +19,11 @@ export default function orderReducer(state = initialState, action) {
         quantity: action.quantity,
         products: [...state.products, {product: action.product, quantity: action.quantity}]
       };
+    case SCHEDULE_IT:
+      return {
+        ...state,
+        orders: [...state.orders, action.order]
+      }
     default:
       return state;
   }
