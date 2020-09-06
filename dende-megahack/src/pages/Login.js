@@ -6,6 +6,13 @@ import Button from 'react-bootstrap/Button';
 import { doLogin } from '../redux/actions';
 import logo from '../images/logos/logo_dende_fonte_laranja.png';
 
+/* função pro futuro: ao clicar no enter, fazer o login */
+/* function teclaEnter(tecla) {
+  if (tecla.key === 'Enter') {
+    executarFunção();
+  }
+} */
+
 function Login(props) {
   const { login } = props;
   const [email, setEmail] = useState();

@@ -22,6 +22,10 @@ body {
   font-size: 14pt;
 }
 
+h1, h2 {
+  padding-top: 2vh;
+}
+
 .App-logo {
   height: 50vh;
 }
@@ -57,16 +61,16 @@ body {
   background-color: var(--verde-dende);
   border-color: var(--verde-dende);
   font-size: 16pt;
-  height: 2.5em;
-  width: 5em;
 }
 
 .button-verde:hover {
   background-color: var(--laranja-dende);
   border-color: var(--laranja-dende);
   margin-bottom: 2em;
-  height: 2.5em;
-  width: 5em;
+}
+
+.form-container {
+  margin: 5vh 50vh 1vh;
 }
 
 .login-container {

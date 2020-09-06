@@ -12,24 +12,26 @@ export default function Home() {
     <div>
       <Header />
       <Nav activeKey="/home" className="buttons-add-container">
-          <Nav.Item className="button-add">
-            <Nav.Link href="/encomendas/add">
-              <img alt="Add encomenda" src={addEncomenda} height="95" />
-              <p>Adicionar encomenda</p>
+        <Nav.Item className="button-add">
+          <Nav.Link href="/encomendas/add">
+            <img alt="Add encomenda" src={addEncomenda} height="95" />
+            <p>Adicionar encomenda</p>
           </Nav.Link>
-          </Nav.Item>
-          <Nav.Item className="button-add">
-            <Nav.Link href="/fichas-tecnicas/add">
-              <img alt="Add encomenda" src={addFicha} height="95" />
+        </Nav.Item>
+        <Nav.Item className="button-add">
+          <Nav.Link href="/fichas-tecnicas/add">
+            <img alt="Add encomenda" src={addFicha} height="95" />
             <p>Adicionar ficha técnica</p>
           </Nav.Link>
-          </Nav.Item>
-          <Nav.Item className="button-add">
-            <Nav.Link href="/fichas-tecnicas/add">
+        </Nav.Item>
+        <Nav.Item className="button-add">
+          <Nav.Link href="/fichas-tecnicas/add">
+            <Link to="/add-client">
               <img alt="Add encomenda" src={addCliente} height="95" />
               <p>Adicionar cliente</p>
+            </Link>
           </Nav.Link>
-          </Nav.Item>
+        </Nav.Item>
       </Nav>
       <div className="home-buttons">
         <Button className="button-laranja" size="1g" block>

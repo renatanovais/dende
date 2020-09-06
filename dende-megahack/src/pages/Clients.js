@@ -1,7 +1,31 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import Header from '../components/Header';
+import ClientCard from '../components/ClientCard';
 
-export default function Clients() {
+
+function Clients(props) {
+  const { clients } = props;
   return (
-    <div>Lista de Clientes</div>
+    <div>
+      <Header />
+      <h1>Lista de Clientes</h1>
+      <div>
+        {clients.length === 0 ? <p>Nenhum cliente cadastrado</p>
+        :
+        clients.map((client) => (
+          <ClientCard key={client.name} client={client} clients={clients} />
+        ))
+        }
+      </div>
+      <h2><Link to="/add-client">Cadastrar novo cliente</Link></h2>
+    </div>
   )
 };
+
+const mapStateToProps = (state) => ({
+  clients: state.clientsReducer.clients
+});
+
+export default connect(mapStateToProps)(Clients);
