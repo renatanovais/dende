@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
@@ -25,10 +26,10 @@ function NewClient(props) {
             <Form.Control placeholder="Insira o nome" onChange={(e) => setName(e.target.value)} />
           </Form.Group>
         </Form.Row>
-          <Form.Group>
-            <Form.Label>Data de aniversário:</Form.Label>
-            <Form.Control type="date" onChange={(e) => setBirthday(e.target.value)} />
-          </Form.Group>
+        <Form.Group>
+          <Form.Label>Data de aniversário:</Form.Label>
+          <Form.Control type="date" onChange={(e) => setBirthday(e.target.value)} />
+        </Form.Group>
         <Form.Row>
           <Form.Group>
             <Form.Label>Número de telefone:</Form.Label>
@@ -62,6 +63,10 @@ function NewClient(props) {
       </Form>
       <Button className="button-verde" onClick={() => newClient(name, birthday, phone, email, address, observations, registryDate)}>
         Cadastrar
+      </Button>
+      <br /><br />
+      <Button className="button-verde">
+        <Link to="/clientes">Clientes</Link>
       </Button>
     </div>
   )

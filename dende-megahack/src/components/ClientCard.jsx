@@ -5,7 +5,7 @@ function ClientCard(props) {
   const { name, birthday, phone, email, address, registryDate } = props;
   return (
     <div>
-      <h1>{name}</h1>
+      <h2>{name}</h2>
       <p>Aniversário: {birthday}</p>
       <p>Telefone: {phone}</p>
       <p>E-mail: {email}</p>
@@ -16,12 +16,12 @@ function ClientCard(props) {
 }
 
 const mapStateToProps = (state) => ({
-  name: state.clientsReducer.client.name,
-  birthday: state.clientsReducer.client.birthday,
-  phone: state.clientsReducer.client.phone,
-  email: state.clientsReducer.client.email,
-  address: state.clientsReducer.client.address,
-  registryDate: state.clientsReducer.client.registryDate,
+  name: state.clientsReducer.clients[0].name,
+  birthday: state.clientsReducer.clients[0].birthday,
+  phone: state.clientsReducer.clients[0].phone,
+  email: state.clientsReducer.clients[0].email,
+  address: state.clientsReducer.clients[0].address,
+  registryDate: state.clientsReducer.clients[0].registryDate,
 });
 
 export default connect(mapStateToProps)(ClientCard);
