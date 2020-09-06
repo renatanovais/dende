@@ -32,7 +32,7 @@ function Order(props) {
       <div>
         <Form>
           {clients.length > 0 ? dropdownClients(clients) :
-            <Button className="button-verde"><Link to="/add-client">Adicionar Cliente</Link></Button>
+            <Link to="/add-client"><Button className="button-verde">Adicionar Cliente</Button></Link>
           }
           <ProductInput name="Produto" qtde="Quantidade" />
           {(productList.length > 0) ? (

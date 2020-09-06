@@ -11,11 +11,11 @@ function Calendar(props) {
     <div>
       <Header />
       {orders.length > 0 ? orders.map((order) => <GridCalendar order={order} />) : <p>Não há encomendas</p>}
-      <Button className="button-verde">
-        <Link to="/encomendas/add">
-        Adicionar Encomenda
-        </Link>
-      </Button>
+      <Link to="/encomendas/add">
+        <Button className="button-verde">
+          Adicionar Encomenda
+        </Button>
+      </Link>
     </div>
   )
 };

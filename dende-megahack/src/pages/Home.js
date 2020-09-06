@@ -34,15 +34,21 @@ export default function Home() {
         </Nav.Item>
       </Nav>
       <div className="home-buttons">
-        <Button className="button-laranja" size="1g" block>
-          <Link to="/encomendas">Agenda de Encomendas</Link>
-        </Button>
-        <Button className="button-laranja" size="1g" block>
-          <Link to="fichas-tecnicas">Fichas Técnicas</Link>
-        </Button>
-        <Button className="button-laranja" size="1g" block>
-          <Link to="clientes">Clientes</Link>
-        </Button>
+        <Link to="/encomendas">
+          <Button className="button-laranja" size="1g" block>
+            Agenda de Encomendas
+          </Button>
+        </Link>
+        <Link to="fichas-tecnicas">
+          <Button className="button-laranja" size="1g" block>
+            Fichas Técnicas
+          </Button>
+        </Link>
+        <Link to="clientes">
+          <Button className="button-laranja" size="1g" block>
+            Clientes
+          </Button>
+        </Link>
       </div>
     </div>
   )
