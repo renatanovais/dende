@@ -9,7 +9,9 @@ function ProductInput(props) {
   const [product, setProduct] = useState();
   const [quantity, setQuantity] = useState();
   const [disable, setDisable] = useState(false);
+  const [noClient, setNoClient] = useState(true);
 
+  
   return (
     <Form.Row className="row-form">
       <Form.Group id="product-input">
