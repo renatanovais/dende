@@ -363,7 +363,7 @@ h1, h2 {
   display: flex;
   font-family: 'Josefin Sans', sans-serif;
   justify-content: space-between;
-  padding: 1vh 8vw 2vh;
+  padding: 1vh 8vw 3vh;
 }
 
 .info-calendar .calendar-date {
@@ -551,8 +551,73 @@ className="label-form" */
 /* FIM PAG CADASTRAR CLIENTES */
 /* INICIO PAG CLIENTES
 CSS APROVEITADO DA PAG CALENDARIO
-className="info-calendar"
+className="info-calendar";
+className="add-button-calendar";
 */
 .info-calendar .list-title {
   border-bottom: 3px solid var(--laranja-dende);
+}
+
+.client-grid {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 1vh auto;
+  max-width: 80%;
+}
+
+.client-card {
+  background-color: whitesmoke;
+  box-shadow: 10px 5px 5px var(--verde-dende);
+  border-left: 6px solid var(--verde-dende);
+  display: flex;
+  font-size: 0.9rem;
+  font-family: 'Josefin Sans', sans-serif;;
+  flex-direction: column;
+  margin: 1vh 1vw 3vh;
+  padding: 3vh 10vw 1vh 5vw;
+  max-width: 300px;
+}
+
+.client-card .email-info {
+  font-style: italic;
+  font-weight: 300;
+  margin-top: none;
+}
+
+.client-card .geral-info {
+  font-size: 0.8rem;
+  line-height: 0.8rem;
+  margin: 0;
+  padding: 0;
+}
+
+.client-card .geral-info .row-info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.client-card .geral-info .row-info p {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0 7em 8px 0;
+}
+
+.client-card .geral-info .row-info .row-data{
+  font-weight: 300;
+  padding-bottom: 3vh;
+}
+
+.client-card .geral-info .other-info .other-info-data {
+  font-weight: 300;
+}
+
+.italic-info {
+  font-style: italic;
+}
+
+@media (min-width: 700px) {
+  .client-card {
+    padding: 3vh 5vw 0 1vw;
+  }
 }

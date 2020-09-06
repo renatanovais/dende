@@ -1,7 +1,13 @@
 import { SAVE_CLIENT } from '../actions';
 
 const initialState = {
-  clients: [{name: 're'}, {name: 'ross'}, {name: 'ana'}, {name: 'bill'}, {name: 'bianca'}, {name: 'beatriz'}],
+  clients: [{name:"Renata Novais",
+  birthday:"1995-12-14",
+  phone:"31997914607",
+  email:"rnovaiscs@gmail.com",
+  address:"Alameda das Falcatas",
+  observations:"não gosta de maracujá",
+  registryDate:"2020-09-06T18:10"}, {name: 'ross'}, {name: 'ana'}, {name: 'bill'}, {name: 'bianca'}, {name: 'beatriz'}],
 };
 
 export function clientsReducer(state = initialState, action) {
@@ -28,4 +34,10 @@ export function clientsReducer(state = initialState, action) {
 }
 
 //  PARA TESTAR DROPDOWN NA PÁGINA DE AGENDAR ENCOMENDA
-// {name: 're'}, {name: 'ross'}, {name: 'ana'}, {name: 'bill'}, {name: 'bianca'}, {name: 'beatriz'}
+// {name:"Renata Novais",
+//   birthday:"1995-12-14",
+//   phone:"31997914607",
+//   email:"rnovaiscs@gmail.com",
+//   address:"Alameda das Falcatas",
+//   observations:"não gosta de maracujá",
+//   registryDate:"2020-09-06T18:10"}, {name: 'ross'}, {name: 'ana'}, {name: 'bill'}, {name: 'bianca'}, {name: 'beatriz'}

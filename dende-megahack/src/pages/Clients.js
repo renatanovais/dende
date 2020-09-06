@@ -17,7 +17,7 @@ function Clients(props) {
           <p>Adicionar <br/> cliente</p>
         </Link>
       </div>
-      <div>
+      <div className="client-grid">
         {clients.length === 0 ? <p>Nenhum cliente cadastrado</p>
         :
         clients.map((client) => (
