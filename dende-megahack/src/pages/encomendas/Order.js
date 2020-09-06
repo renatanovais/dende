@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
-import Form from 'react-bootstrap/Form';
 import { useHistory, Link } from 'react-router-dom';
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/esm/Button';
 import ProductInput from '../../components/ProductInput';
 import Header from '../../components/Header';
-import Button from 'react-bootstrap/esm/Button';
 import { scheduleIt, clearProduct } from '../../redux/actions';
+import addCliente from '../../images/icons/new-client-icon.png';
+
 
 function Order(props) {
   const history = useHistory();
@@ -42,11 +44,14 @@ function Order(props) {
   return (
     <div>
       <Header />
-      <h3>Agendar Encomenda</h3>
-      <div>
+      <div className="add-order-container">
+        <h3>Agendar Encomenda</h3>
         <Form className="form-container">
           {clients.length > 0 ? dropdownClients(clients) :
-            <Link to="/add-client"><Button className="button-verde">Adicionar Cliente</Button></Link>
+            <Link className="link-add-client" to="/add-client">
+              <img alt="Add encomenda" src={addCliente} height="95" />
+              <p>Adicionar cliente</p>
+            </Link>
           }
           <ProductInput name="Produto" qtde="Qtde" client={client} />
           {(productList.length > 0) ? (

@@ -436,7 +436,7 @@ h1, h2 {
 
 @media (min-width: 700px) {
   .info-calendar {
-    padding: 2vh 10vw 2vh;
+    padding: 2vh 10vw 4vh;
   }
 
   .info-calendar .calendar-date {
@@ -457,6 +457,38 @@ h1, h2 {
 }
 
 /* FIM CALENDARIO DE ENCOMENDAS */
+/* INICIO PAG ADD ENCOMENDA (ORDER) */
+.add-order-container {
+  display: flex;
+  font-family: 'Josefin Sans', sans-serif;;
+  flex-flow: column;
+  margin: 2vh auto;
+  max-width: 90%;
+}
+
+.add-order-container h3 {
+  color: var(--laranja-dende);
+  font-style: italic;
+  font-weight: 500;
+  padding: 2vh 2vw;
+  text-align: center;
+}
+
+.add-order-container .link-add-client {
+  align-items: center;
+  display: flex;
+  margin: 1vh 4vw;
+}
+
+.add-order-container .link-add-client img {
+  height: 10vh;
+}
+
+.add-order-container .link-add-client p {
+  border-bottom: 1vh solid var(--verde-dende);
+  font-weight: 300;
+  margin: 0 4vw;
+}
 
 .label-form {
   margin: 2vh 0 0;
