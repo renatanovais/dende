@@ -6,11 +6,9 @@ import Login from './pages/Login';
 import Calendar from './pages/encomendas/Calendar';
 import Clients from './pages/Clients';
 import Products from './pages/Products';
-<<<<<<< HEAD
 import Order from './pages/encomendas/Order';
-=======
 import NewClient from './pages/NewClient';
->>>>>>> bc4267cc88a5fed1b56ff02fb2469c6b8a147553
+
 
 function App() {
   return (
