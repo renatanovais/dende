@@ -16,7 +16,7 @@ export const newProduct = (product, quantity) => ({
 
 export const NEW_ITEM = 'NEW_ITEM';
 
-export const newProduct = (item, quantity, unity, price) => ({
+export const newItem = (item, quantity, unity, price) => ({
   type: NEW_ITEM,
   item,
   quantity,
