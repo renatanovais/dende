@@ -30,7 +30,7 @@ function Order(props) {
       <Header />
       <h3>Agendar Encomenda</h3>
       <div>
-        <Form>
+        <Form className="form-container">
           {clients.length > 0 ? dropdownClients(clients) :
             <Link to="/add-client"><Button className="button-verde">Adicionar Cliente</Button></Link>
           }

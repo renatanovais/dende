@@ -107,3 +107,8 @@ h1, h2 {
   margin: 5vh 50vh 1vh;
 }
 
+.calendar-grid {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
