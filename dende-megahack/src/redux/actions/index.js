@@ -14,6 +14,14 @@ export const newProduct = (product, quantity) => ({
   quantity,
 })
 
+export const CLEAR_PRODUCTS = 'CLEAR_PRODUCTS';
+
+export const clearProduct = () => ({
+  type: CLEAR_PRODUCTS,
+  productList: [],
+})
+
+
 export const SCHEDULE_IT = 'SCHEDULE_IT';
 
 export const scheduleIt = (products, client, dueDate, delivery, details) => ({

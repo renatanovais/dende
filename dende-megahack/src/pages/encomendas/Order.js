@@ -4,12 +4,12 @@ import Form from 'react-bootstrap/Form';
 import ProductInput from '../../components/ProductInput';
 import Header from '../../components/Header';
 import Button from 'react-bootstrap/esm/Button';
-import { scheduleIt } from '../../redux/actions';
+import { scheduleIt, clearProduct } from '../../redux/actions';
 import { useHistory } from 'react-router-dom';
 
 function Order(props) {
   const history = useHistory();
-  const { productList, registerOrder } = props;
+  const { productList, registerOrder, clearProducts } = props;
 
   const [client, setClient] = useState();
   const [date, setDate] = useState();
@@ -51,6 +51,7 @@ function Order(props) {
           <Button className="button-verde" onClick={() => {
             registerOrder(productList, client, date, delivery, details)
             history.push('/encomendas');
+            clearProducts();
           }}>
             Agendar
           </Button>
@@ -66,6 +67,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   registerOrder: (productList, client, date, delivery, details) => dispatch(scheduleIt(productList, client, date, delivery, details)),
+  clearProducts: () => dispatch(clearProduct()),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Order);
