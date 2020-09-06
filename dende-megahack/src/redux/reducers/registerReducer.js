@@ -6,6 +6,9 @@ const initialState = {
   unity: '',
   price: 0,
   itens: [],
+  img:'',
+  prepare: '',
+  produce: '',
 };
 
 export default function registerReducer(state = initialState, action) {
@@ -24,21 +27,16 @@ export default function registerReducer(state = initialState, action) {
             quantity: action.quantity,
             unity: action.unity,
             price: action.price,
+            produce: action.produce,
+            prepare: action.prepare,
+            img: action.img,
           },
         ],
       };
     case SAVE_ITEM:
       return {
         ...state,
-        products: [
-          ...state.products,
-          {
-            item: action.item,
-            date: action.date,
-            produce: action.produce,
-            prepare: action.prepare,
-          },
-        ],
+        itens: [...state.itens, action.item],
       };
     default:
       return state;

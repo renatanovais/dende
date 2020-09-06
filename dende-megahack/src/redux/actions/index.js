@@ -12,7 +12,7 @@ export const newProduct = (product, quantity) => ({
   type: NEW_PRODUCT,
   product,
   quantity,
-})
+});
 
 export const NEW_ITEM = 'NEW_ITEM';
 
@@ -22,30 +22,26 @@ export const newItem = (item, quantity, unity, price) => ({
   quantity,
   unity,
   price,
-})
-
+});
 
 export const SCHEDULE_IT = 'SCHEDULE_IT';
 
 export const scheduleIt = (products, client, dueDate, delivery, details) => ({
-  type: SCHEDULE_IT, 
+  type: SCHEDULE_IT,
   order: {
     products,
     client,
     dueDate,
     delivery,
     details,
-  }
-})
+  },
+});
 
 export const SAVE_ITEM = 'SAVE_ITEM';
 
-export const saveItem = (item, date, produce, prepare) => ({
+export const saveItem = (itens, produce, prepare, date, img) => ({
   type: SAVE_ITEM,
-    item,
-    date,
-    produce,
-    prepare,
+  itemList: { itens, date, produce, prepare, img },
 });
 
 export const SAVE_CLIENT = 'SAVE_CLIENT';

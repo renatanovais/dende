@@ -13,12 +13,11 @@ function TextInput(props) {
     <Form.Row>
       <Form.Group>
         <Form.Label>Ingrediente</Form.Label>
-        <Form.Control placeholder={props.ingrediente} onChange={(e) => setItem(e.target.value)} />
+        <Form.Control placeholder={props.item} onChange={(e) => setItem(e.target.value)} />
       </Form.Group>
       <Form.Group>
         <Form.Label>Quantidade</Form.Label>
         <Form.Control
-          type="number"
           placeholder={props.qtde}
           onChange={(e) => setQuantity(e.target.value)}
         />
@@ -30,7 +29,6 @@ function TextInput(props) {
       <Form.Group>
         <Form.Label>Preço</Form.Label>
         <Form.Control
-          type="number"
           placeholder={props.preco}
           onChange={(e) => setPrice(e.target.value)}
         />
