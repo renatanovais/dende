@@ -20,7 +20,7 @@ export default function Home() {
           <p>Adicionar <br/> ficha técnica</p>
         </Link>
         <Link to="/add-client">
-          <img alt="Add encomenda" src={addCliente} height="95" />
+          <img alt="Add cliente" src={addCliente} height="95" />
           <p>Adicionar <br/> cliente</p>
         </Link>
       </div>

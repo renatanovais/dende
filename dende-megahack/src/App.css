@@ -547,3 +547,12 @@ className="label-form" */
   margin: 1vh auto;
   max-width: 80%;
 }
+
+/* FIM PAG CADASTRAR CLIENTES */
+/* INICIO PAG CLIENTES
+CSS APROVEITADO DA PAG CALENDARIO
+className="info-calendar"
+*/
+.info-calendar .list-title {
+  border-bottom: 3px solid var(--laranja-dende);
+}
