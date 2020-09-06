@@ -6,6 +6,7 @@ import addEncomenda from '../images/icons/new-event-icon.png';
 import addFicha from '../images/icons/new-recipe-icon.png';
 import addCliente from '../images/icons/new-client-icon.png';
 import Header from '../components/Header';
+import Details from '../pages/Details';
 
 export default function Home() {
   return (
@@ -43,7 +44,6 @@ export default function Home() {
         <Button className="button-laranja" size="1g" block>
           <Link to="clientes">Clientes</Link>
         </Button>
-      </div>
     </div>
   )
 };
