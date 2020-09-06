@@ -34,7 +34,7 @@ function Order(props) {
           {clients.length > 0 ? dropdownClients(clients) :
             <Link to="/add-client"><Button className="button-verde">Adicionar Cliente</Button></Link>
           }
-          <ProductInput name="Produto" qtde="Quantidade" />
+          <ProductInput name="Produto" qtde="Qtde" />
           {(productList.length > 0) ? (
             <div>
               {productList.map((product, i) => i > 0 && i < 1 ? <ProductInput name={product.product} qtde={product.quantity} /> : <ProductInput name="Produto" qtde="Quantidade" /> )}

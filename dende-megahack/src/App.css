@@ -60,12 +60,14 @@ h1, h2 {
 .button-verde {
   background-color: var(--verde-dende);
   border-color: var(--verde-dende);
+  color: black;
   font-size: 16pt;
 }
 
 .button-verde:hover {
   background-color: var(--laranja-dende);
   border-color: var(--laranja-dende);
+  color: gray;
   margin-bottom: 2em;
 }
 
@@ -111,4 +113,30 @@ h1, h2 {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+}
+
+.label-form {
+  margin: 2vh 0 0;
+}
+
+.row-form {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
+.row-form #product-input {
+  width: 70%;
+}
+
+.row-form #qtd-input {
+  margin: 0 auto;
+  max-width: 20%;
+}
+
+.check-input-button {
+  background-color: transparent;
+  border: none;
+  margin: 4vh 1vh 1vh;
+  padding: none;
 }
