@@ -1,4 +1,4 @@
-:root {
+/* :root {
   --laranja-dende: #f6833c;
   --azul-dende: #609bd2;
   --verde-dende: #31b9a5;
@@ -85,6 +85,210 @@ h1, h2 {
   width: 50vh;
   margin: 10px auto;
 }
+
+.header-comp {
+  align-items: center;
+  background-color: var(--cinza-claro);
+  display: flex;
+  font-size: 16pt;
+  justify-content: space-between;
+  padding: 1vh 55vh 1vh;
+}
+
+.header-configs {
+  display: flex;
+  flex-direction: row;
+}
+
+.header-configs p {
+  margin-right: 1vh;
+  margin-top: 0.6vh;
+}
+
+.home-buttons {
+  margin: 5vh 50vh 1vh;
+}
+
+.calendar-grid {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.label-form {
+  margin: 2vh 0 0;
+}
+
+.row-form {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
+.row-form #product-input {
+  margin: 2vh auto;
+  width: 70%;
+}
+
+.row-form #qtd-input {
+  margin: 2vh auto;
+  max-width: 20%;
+}
+
+.select-row {
+  display: flex;
+  margin: 2vh 5vw;
+  justify-content: space-around;
+}
+
+.check-input-button {
+  background-color: transparent;
+  border: none;
+  margin: 6vh 1vh 1vh;
+  padding: none;
+} */
+
+/* TESTE RE */
+/* REORGANIZAR */
+/* APP.CSS */
+:root {
+  --laranja-dende: #f6833c;
+  --azul-dende: #609bd2;
+  --verde-dende: #31b9a5;
+  --verde-dois-dende: #61c190;
+  --amarelo-dende: #ffd800;
+  --cinza-claro: #e5e5e5;
+}
+
+a {
+  color: black;
+}
+
+a:hover {
+  color: gray;
+  text-decoration: none;
+}
+
+body {
+  margin: 0 auto;
+  /* text-align: center; */
+  font-size: 14pt;
+}
+
+h1, h2 {
+  padding-top: 2vh;
+}
+
+.button-laranja {
+  background-color: var(--laranja-dende);
+  border-color: var(--laranja-dende);
+  height: 3em;
+  margin-bottom: 2em;
+}
+
+.button-laranja:hover {
+  background-color: var(--verde-dende);
+  border-color: var(--verde-dende);
+  height: 3em;
+  margin-bottom: 2em;
+}
+
+.button-verde {
+  background-color: var(--verde-dende);
+  border-color: var(--verde-dende);
+  color: black;
+  font-size: 16pt;
+}
+
+.button-verde:hover {
+  background-color: var(--laranja-dende);
+  border-color: var(--laranja-dende);
+  color: gray;
+  margin-bottom: 2em;
+}
+
+/* LOGIN.CSS */
+.App-logo {
+  margin: 3vh auto 2vh;
+  text-align: center;
+}
+
+.App-logo img {
+  /* height: 50vh; */
+  height: 40vh;
+}
+
+.login-container {
+  display: flex;
+  flex-flow: column;
+  margin: 0 auto;
+  max-width: 90%;
+  /* margin: 0 25vh; */
+}
+
+.form-label {
+  color: var(--laranja-dende);
+  margin: 0 5vw;
+  max-width: 80vh;
+  text-align: left !important;
+}
+
+.login-form {
+  margin: 1vh auto 0;
+  width: 90%;
+  /* width: 50vh; */
+}
+
+.login-container .text-muted {
+  margin: 1.5vh auto;
+  max-width: 90%;
+  text-align: center;
+}
+
+.login-container .link-container {
+  margin: 2vh auto;
+}
+
+@media(min-width: 700px) {
+  .App-logo {
+    margin: 2vh auto;
+    text-align: center;
+  }
+  
+  .App-logo img {
+    /* height: 50vh; */
+    height: 45vh;
+  }
+
+  .login-container {
+    display: flex;
+    font-size: 20px;
+    flex-flow: column;
+    margin: 2vh auto;
+    max-width: 60%;
+    /* margin: 0 25vh; */
+  } 
+}
+
+/* FIM PAG LOGIN */
+
+/* .form-container {
+  margin: 5vh 50vh 1vh;
+} */
+
+.buttons-add-container {
+  display: flex;
+  flex-flow: row;
+  font-size: 20px;
+  justify-content: space-around;
+  margin: 10vh 45vh 5vh;
+}
+
+.button-add {
+  display: flex;
+  flex-direction: column;
+}
+
 
 .header-comp {
   align-items: center;
