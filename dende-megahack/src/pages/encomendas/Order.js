@@ -40,18 +40,20 @@ function Order(props) {
               {productList.map((product, i) => i > 0 && i < 1 ? <ProductInput name={product.product} qtde={product.quantity} /> : <ProductInput name="Produto" qtde="Quantidade" /> )}
             </div>
           ): false}
-          <Form.Group>
-            <Form.Label>Prazo</Form.Label>
-            <Form.Control type="date" onChange={(e) => setDate(e.target.value)} />
-          </Form.Group>
-          <Form.Group>
-            <Form.Label>Escolha a opção de entrega</Form.Label>
-            <Form.Control as="select" onChange={(e) => setDelivery(e.target.value)}>
-              <option value="">Selecione</option>
-              <option value="entregar">Entregar</option>
-              <option value="buscar">Buscar</option>
-            </Form.Control>
-          </Form.Group>
+          <Form.Row className="select-row">
+            <Form.Group>
+              <Form.Label>Prazo</Form.Label>
+              <Form.Control type="date" onChange={(e) => setDate(e.target.value)} />
+            </Form.Group>
+            <Form.Group>
+              <Form.Label>Escolha a opção de entrega</Form.Label>
+              <Form.Control as="select" onChange={(e) => setDelivery(e.target.value)}>
+                <option value="">Selecione</option>
+                <option value="entregar">Entregar</option>
+                <option value="buscar">Buscar</option>
+              </Form.Control>
+            </Form.Group>
+          </Form.Row>
           <Form.Group>
             <Form.Label>Mais Informações</Form.Label>
             <Form.Control as="textarea" rows="4" placeholder="Detalhes ou mais informações" onChange={(e) => setDetails(e.target.value)} />

@@ -1,7 +1,7 @@
 import { SAVE_CLIENT } from '../actions';
 
 const initialState = {
-  clients: [{name: 're'}, {name: 'ross'}, {name: 'ana'}, {name: 'bill'}, {name: 'bianca'}, {name: 'beatriz'}]
+  clients: [],
 };
 
 export function clientsReducer(state = initialState, action) {

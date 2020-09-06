@@ -126,17 +126,24 @@ h1, h2 {
 }
 
 .row-form #product-input {
+  margin: 2vh auto;
   width: 70%;
 }
 
 .row-form #qtd-input {
-  margin: 0 auto;
+  margin: 2vh auto;
   max-width: 20%;
+}
+
+.select-row {
+  display: flex;
+  margin: 2vh 5vw;
+  justify-content: space-around;
 }
 
 .check-input-button {
   background-color: transparent;
   border: none;
-  margin: 4vh 1vh 1vh;
+  margin: 6vh 1vh 1vh;
   padding: none;
 }

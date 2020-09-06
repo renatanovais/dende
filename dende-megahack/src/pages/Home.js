@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
-import Nav from 'react-bootstrap/Nav';
 import addEncomenda from '../images/icons/new-event-icon.png';
 import addFicha from '../images/icons/new-recipe-icon.png';
 import addCliente from '../images/icons/new-client-icon.png';
@@ -11,7 +10,21 @@ export default function Home() {
   return (
     <div>
       <Header />
-      <Nav activeKey="/home" className="buttons-add-container">
+      <div className="buttons-add-container">
+        <Link to="/encomendas/add">
+          <img alt="Add encomenda" src={addEncomenda} height="95" />
+          <p>Adicionar encomenda</p>
+        </Link>
+        <Link to="/fichas-tecnicas/add">
+          <img alt="Add encomenda" src={addFicha} height="95" />
+          <p>Adicionar ficha técnica</p>
+        </Link>
+        <Link to="/add-client">
+          <img alt="Add encomenda" src={addCliente} height="95" />
+          <p>Adicionar cliente</p>
+        </Link>
+      </div>
+      {/* <Nav activeKey="/home" className="buttons-add-container">
         <Nav.Item className="button-add">
           <Nav.Link href="/encomendas/add">
             <img alt="Add encomenda" src={addEncomenda} height="95" />
@@ -32,7 +45,7 @@ export default function Home() {
             </Link>
           </Nav.Link>
         </Nav.Item>
-      </Nav>
+      </Nav> */}
       <div className="home-buttons">
         <Link to="/encomendas">
           <Button className="button-laranja" size="1g" block>
