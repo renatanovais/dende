@@ -1,12 +1,12 @@
-import { NEW_ITEM } from '../actions/index';
+import { NEW_ITEM, SAVE_ITEM } from '../actions/index';
 
 const initialState = {
   item: '',
   quantity: 0,
   unity: '',
   price: 0,
-  products: [],
-}
+  itens: [],
+};
 
 export default function registerReducer(state = initialState, action) {
   switch (action.type) {
@@ -17,7 +17,28 @@ export default function registerReducer(state = initialState, action) {
         quantity: action.quantity,
         unity: action.unity,
         price: action.price,
-        products: [...state.products, {item: action.item, quantity: action.quantity, unity: action.unity, price: action.price}]
+        itens: [
+          ...state.itens,
+          {
+            item: action.item,
+            quantity: action.quantity,
+            unity: action.unity,
+            price: action.price,
+          },
+        ],
+      };
+    case SAVE_ITEM:
+      return {
+        ...state,
+        products: [
+          ...state.products,
+          {
+            item: action.item,
+            date: action.date,
+            produce: action.produce,
+            prepare: action.prepare,
+          },
+        ],
       };
     default:
       return state;

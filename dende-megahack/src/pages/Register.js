@@ -3,8 +3,11 @@ import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
+import InputText from '../components/InputText';
+import { connect } from 'react-redux';
 
-function Register() {
+function Register(props) {
+  const { itemList, registerItem } = props;
   return (
     <React.Fragment>
       <Header />
@@ -22,48 +25,30 @@ function Register() {
           </Form.Group>
         </Form.Row>
       </React.Fragment>
-      <Form>
-        <Form.Row>
-          <Form.Group>
-            <Form.Label>Ingrediente</Form.Label>
-            <Form.Control placeholder="Ingrediente" />
-          </Form.Group>
 
-          <Form.Group>
-            <Form.Label>Quantidade</Form.Label>
-            <Form.Control placeholder="Quantidade" />
-          </Form.Group>
+      <InputText />
 
-          <Form.Group>
-            <Form.Label>Unidade de Medida</Form.Label>
-            <Form.Control placeholder="Unidade" value={unidade} onChange={handleInputChange} />
-          </Form.Group>
-
-          <Form.Group>
-            <Form.Label>Preço de Aquisição</Form.Label>
-            <Form.Control placeholder="Preço" />
-          </Form.Group>
-
-          <Form.Group>
-            <Form.Check required type="checkbox" label="Check" />
-          </Form.Group>
-        </Form.Row>
-
-        <Form.Group>
-          <Form.Label>Rendimento</Form.Label>
-          <Form.Control />
-        </Form.Group>
-
-        <Form.Group>
-          <Form.Label>Modo de Preparo</Form.Label>
-          <Form.Control as="textarea" rows="3" />
-        </Form.Group>
-
-        <Form.Control placeholder="URL da Imagem do seu Produto" />
-        <Link to="https://pt-br.imgbb.com/">Saiba como obter a URL da sua imagem</Link>
-      </Form>
       <Form.Group>
-        <Button className="button-verde" type="button">
+        <Form.Label>Rendimento</Form.Label>
+        <Form.Control />
+      </Form.Group>
+
+      <Form.Group>
+        <Form.Label>Modo de Preparo</Form.Label>
+        <Form.Control as="textarea" rows="3" />
+      </Form.Group>
+
+      <Form.Control placeholder="URL da Imagem do seu Produto" />
+      <Link to="https://pt-br.imgbb.com/">Saiba como obter a URL da sua imagem</Link>
+      <Form.Group>
+        <Button
+          className="button-verde"
+          type="button"
+          onClick={() => {
+            registerItem(itemList, name, date, produce, prepare);
+            history.push('/fichas-tecnicas');
+          }}
+        >
           Ok
         </Button>
       </Form.Group>
@@ -71,4 +56,13 @@ function Register() {
   );
 }
 
-export default Register;
+const mapStateToProps = (state) => ({
+  itemList: state.registerReducer.itens,
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  registerItem: (itemList, client, date, delivery, details) =>
+    dispatch(scheduleIt(productList, client, date, delivery, details)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Register);

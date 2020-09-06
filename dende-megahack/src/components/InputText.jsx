@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import { newItem } from '../redux/actions';
+import { newItem } from '../redux/actions/index';
 import Form from 'react-bootstrap/Form';
 
 function TextInput(props) {

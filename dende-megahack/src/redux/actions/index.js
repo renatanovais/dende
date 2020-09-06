@@ -38,6 +38,16 @@ export const scheduleIt = (products, client, dueDate, delivery, details) => ({
   }
 })
 
+export const SAVE_ITEM = 'SAVE_ITEM';
+
+export const saveItem = (item, date, produce, prepare) => ({
+  type: SAVE_ITEM,
+    item,
+    date,
+    produce,
+    prepare,
+});
+
 export const SAVE_CLIENT = 'SAVE_CLIENT';
 
 export const saveClient = (name, birthday, phone, email, address, observations, registryDate) => ({
