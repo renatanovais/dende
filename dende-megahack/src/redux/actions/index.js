@@ -14,6 +14,17 @@ export const newProduct = (product, quantity) => ({
   quantity,
 })
 
+export const NEW_ITEM = 'NEW_ITEM';
+
+export const newProduct = (item, quantity, unity, price) => ({
+  type: NEW_ITEM,
+  item,
+  quantity,
+  unity,
+  price,
+})
+
+
 export const SCHEDULE_IT = 'SCHEDULE_IT';
 
 export const scheduleIt = (products, client, dueDate, delivery, details) => ({
