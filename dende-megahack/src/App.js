@@ -6,6 +6,7 @@ import Login from './pages/Login';
 import Calendar from './pages/Calendar';
 import Clients from './pages/Clients';
 import Products from './pages/Products';
+import NewClient from './pages/NewClient';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route exact path="/encomendas" component={Calendar} />
         <Route exact path="/clientes" component={Clients} />
         <Route exact path="/fichas-tecnicas" component={Products} />
+        <Route exact path="/add-client" component={NewClient} />
         <Route exact path="/" component={Login} />
       </Switch>
     </BrowserRouter>
