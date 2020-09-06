@@ -22,8 +22,8 @@ function Order(props) {
 
   const dropdownClients = (param) => {
     return (
-      <Form.Control as="select" title="Clientes" onChange={(e) => {setClient(e.target.value); noClientsDisable()}}>
-        <option value="">Clientes</option>
+      <Form.Control className="list-client-select" as="select" title="Clientes" onChange={(e) => {setClient(e.target.value); noClientsDisable()}}>
+        <option value="">Cliente</option>
         {param.map((client, i) => <option key={i} value={client.name}>{client.name}</option>)}
       </Form.Control>
     );
@@ -45,8 +45,8 @@ function Order(props) {
     <div>
       <Header />
       <div className="add-order-container">
-        <h3>Agendar Encomenda</h3>
-        <Form className="form-container">
+        <h4>Agendar Encomenda</h4>
+        <Form>
           {clients.length > 0 ? dropdownClients(clients) :
             <Link className="link-add-client" to="/add-client">
               <img alt="Add encomenda" src={addCliente} height="95" />
@@ -61,11 +61,11 @@ function Order(props) {
           ): false}
           <Form.Row className="select-row">
             <Form.Group>
-              <Form.Label>Prazo</Form.Label>
+              <Form.Label className="label-form">Prazo</Form.Label>
               <Form.Control type="date" onChange={(e) => setDate(e.target.value)} disabled={disableByClients} />
             </Form.Group>
             <Form.Group>
-              <Form.Label>Escolha a opção de entrega</Form.Label>
+              <Form.Label className="label-form">Escolha a opção de entrega</Form.Label>
               <Form.Control as="select" onChange={(e) => setDelivery(e.target.value)} disabled={disableByClients}>
                 <option value="">Selecione</option>
                 <option value="entregar">Entregar</option>
@@ -74,7 +74,7 @@ function Order(props) {
             </Form.Group>
           </Form.Row>
           <Form.Group>
-            <Form.Label>Mais Informações</Form.Label>
+            <Form.Label className="label-form">Mais Informações</Form.Label>
             <Form.Control as="textarea" rows="4" placeholder="Detalhes ou mais informações" onChange={(e) => setDetails(e.target.value)} disabled={disableByClients} />
           </Form.Group>
           <Button className="button-verde" disabled={buttonDisable} onClick={() => {

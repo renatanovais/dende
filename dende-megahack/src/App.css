@@ -161,6 +161,11 @@ h1, h2 {
   --laranja-dende-transparent: #fcd1b6;
 }
 
+button:focus, button:active,
+input:focus, input:active {
+  outline: none;
+}
+
 a {
   color: black;
 }
@@ -460,13 +465,14 @@ h1, h2 {
 /* INICIO PAG ADD ENCOMENDA (ORDER) */
 .add-order-container {
   display: flex;
-  font-family: 'Josefin Sans', sans-serif;;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 16px;
   flex-flow: column;
   margin: 2vh auto;
-  max-width: 90%;
+  max-width: 80%;
 }
 
-.add-order-container h3 {
+.add-order-container h4 {
   color: var(--laranja-dende);
   font-style: italic;
   font-weight: 500;
@@ -481,7 +487,7 @@ h1, h2 {
 }
 
 .add-order-container .link-add-client img {
-  height: 10vh;
+  height: 8vh;
 }
 
 .add-order-container .link-add-client p {
@@ -490,35 +496,49 @@ h1, h2 {
   margin: 0 4vw;
 }
 
-.label-form {
-  margin: 2vh 0 0;
+.add-order-container .list-client-select {
+  background-color: var(--verde-dende);
+  border: none;
+  color: var(--cinza-claro);
+  margin: 2vh auto 0;
+  outline: none;
+  width: 60%;
+}
+
+.add-order-container .list-client-select:hover {
+  opacity: 0.5;
 }
 
 .row-form {
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-between;
+  font-size: 15px;
 }
 
-.row-form #product-input {
+.label-form {
+  margin: 2vh 0 0;
+}
+
+.row-form .product-input {
   margin: 2vh auto;
-  width: 70%;
+  max-width: 50%;
 }
 
-.row-form #qtd-input {
+.row-form .qtd-input {
   margin: 2vh auto;
   max-width: 20%;
+}
+
+.check-input-button {
+  background-color: transparent;
+  border: none;
+  margin: 6vh 1vh 1vh 0;
+  padding: none;
 }
 
 .select-row {
   display: flex;
   margin: 2vh 5vw;
   justify-content: space-around;
-}
-
-.check-input-button {
-  background-color: transparent;
-  border: none;
-  margin: 6vh 1vh 1vh;
-  padding: none;
 }
