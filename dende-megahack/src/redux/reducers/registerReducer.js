@@ -27,9 +27,6 @@ export default function registerReducer(state = initialState, action) {
             quantity: action.quantity,
             unity: action.unity,
             price: action.price,
-            produce: action.produce,
-            prepare: action.prepare,
-            img: action.img,
           },
         ],
       };
