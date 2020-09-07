@@ -1,8 +1,9 @@
-import { NEW_ITEM, SAVE_ITEM } from '../actions/index';
+import { NEW_ITEM, SAVE_ITEM, FINAL_PRICE } from '../actions/index';
 
 // LISTA DE PRODUTOS PARA TESTE
 
 const initialState = {
+  nameProduct: '',
   item: '',
   quantity: 0,
   unity: '',
@@ -11,6 +12,7 @@ const initialState = {
   img:'',
   prepare: '',
   produce: '',
+  productPrice: '',
   allProducts: [
     {
       itens: [{
@@ -28,8 +30,9 @@ const initialState = {
       nameProduct:"Brigadeiro",
       date:"2020-9-7",
       produce:"1 panela",
-      prepare:"Coloca tudo na panela, cozinha e mexe mexe mexe mexe como é bom",
-      img:"https://comidinhasdochef.com/brigadeiro-gomer/brigadeiro-gomer/"
+      prepare:"Coloca tudo na panela e mexe mexe mexe mexe como é bom",
+      img:"https://comidinhasdochef.com/brigadeiro-gomer/brigadeiro-gomer/",
+      productPrice: "15.0"
     },
     { 
       itens: [{item:"Grão",
@@ -41,7 +44,8 @@ const initialState = {
       date:"2020-9-10",
       produce:"8 xícaras",
       prepare:"Moer, moer e moer, para coar, coar e coar!",
-      img:"https://blog.chefsclub.com.br/wp-content/uploads/2019/08/historia_do_cafe-968x660.jpg"
+      img:"https://blog.chefsclub.com.br/wp-content/uploads/2019/08/historia_do_cafe-968x660.jpg",
+      productPrice: "15.0",
     },
   ],
 };

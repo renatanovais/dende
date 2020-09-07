@@ -50,11 +50,10 @@ export const newItem = (item, quantity, unity, price) => ({
 
 export const SAVE_ITEM = 'SAVE_ITEM';
 
-export const saveItem = (itens, nameProduct, date, produce, prepare, img) => ({
+export const saveItem = (itens, nameProduct, date, produce, prepare, img, productPrice) => ({
   type: SAVE_ITEM,
-  itemList: { itens, nameProduct, date, produce, prepare, img },
+  itemList: { itens, nameProduct, date, produce, prepare, img, productPrice },
 });
-
 
 // clientsReducer
 export const SAVE_CLIENT = 'SAVE_CLIENT';

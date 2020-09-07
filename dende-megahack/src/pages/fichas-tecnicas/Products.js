@@ -17,7 +17,7 @@ function Register(props) {
           <div>
             <img alt={product.nameProduct} src={product.img} height="150px" />
             <p>{product.nameProduct}</p>
-            <p>Preço: </p>
+            <p>Preço: {product.productPrice} </p>
             <button onClick={() => history.push(`/fichas-tecnicas/details-${i}`)}>+ detalhes</button>
           </div>
         )) : <h4>Nenhum produto cadastrado</h4>}

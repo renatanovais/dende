@@ -30,10 +30,37 @@ function NewProduct(props) {
   const [prepare, setPrepare] = useState();
   const [img, setImg] = useState();
 
+  const [method, setMethod] = useState('');
+  const [total, setTotal] = useState(0);
+  const [productPrice, setProductPrice] = useState();
+
+  const [saveDisable, setSaveDisable] = useState(true);
+
   useEffect(() => {
     setDate(getDate(actualDate).saveData);
     setFormatDate(getDate(actualDate).showData);
   }, []);
+
+  useEffect(() => {
+    itemList.forEach((item) => calcCost(item.quantity, item.price));
+    methodsCalc(method);
+  }, [itemList])
+
+  useEffect(() => {
+    if (method, productPrice, nameProduct, itemList, produce, prepare) setSaveDisable(false);
+  }, [method, productPrice, nameProduct, itemList, produce, prepare ])
+  
+  function calcCost(quantity, price) {
+    const value = quantity * price;
+    setTotal(total + value);
+    // methodsCalc(method);
+  };
+
+  const methodsCalc = (meth) => {
+    if (meth === 'TRA') return setProductPrice(3 * total);
+    if (meth === '2x') return setProductPrice(2 * total);
+    if (meth === '80%') return setProductPrice(1.8 * total);
+  }
 
   return (
     <React.Fragment>
@@ -66,7 +93,20 @@ function NewProduct(props) {
       ) : (
         false
       )}
-
+      <Form.Control className="button-verde" as="select" onChange={(e) => {
+        setMethod(e.target.value)
+        methodsCalc(e.target.value)
+      }}>
+        <option value="metodo">Método de Cálculo</option>
+        <option value="TRA">TRA</option>
+        <option value="2x">2x</option>
+        <option value="80%">80%</option>
+      </Form.Control>
+      {method !== '' && (
+        <div>
+          <h5>Preço do produto: {productPrice} </h5>
+        </div>
+      )}
       <Form.Group>
         <Form.Label>Rendimento</Form.Label>
         <Form.Control onChange={(e) => setProduce(e.target.value)} />
@@ -86,8 +126,9 @@ function NewProduct(props) {
         <Button
           className="button-verde"
           type="button"
+          disabled={saveDisable}
           onClick={() => {
-            registerItem(itemList, nameProduct, date, produce, prepare, img);
+            registerItem(itemList, nameProduct, date, produce, prepare, img, productPrice);
             history.push('/fichas-tecnicas');
           }}
         >
@@ -103,8 +144,8 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  registerItem: (itemList, nameProduct, date, produce, prepare, img) =>
-    dispatch(saveItem(itemList, nameProduct, date, produce, prepare, img)),
+  registerItem: (itemList, nameProduct, date, produce, prepare, img, productPrice) =>
+    dispatch(saveItem(itemList, nameProduct, date, produce, prepare, img, productPrice)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(NewProduct);

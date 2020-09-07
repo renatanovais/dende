@@ -11,8 +11,6 @@ function Details(props) {
   const history = useHistory();
   let total = 0;
   const [product, setProduct] = useState('');
-  const [method, setMethod] = useState('');
-  const [productPrice, setProductPrice] = useState();
 
   useEffect(() => {
     const { indice } = props.match.params;
@@ -26,14 +24,6 @@ function Details(props) {
     return value;
   };
 
-  const calcPrice = (e) => {
-    const calcMethod = e.target.value;
-    if (calcMethod === 'TRA') return setProductPrice(3 * total);
-    if (calcMethod === '2x') return setProductPrice(2 * total);
-    if (calcMethod === '80%') return setProductPrice(1.8 * total);
-  }
-
-  
   return (
     <React.Fragment>
   
@@ -48,7 +38,7 @@ function Details(props) {
             <div>
               {product.itens.map((item, i) => (
                 <div key={i}>
-                  {item.item} | {item.quantity} | {item.unity} | {item.price} | {calcCost(item.quantity,item.price)}
+                  {item.item} | {item.quantity} | {item.unity} | {item.price} | {calcCost(item.quantity, item.price)}
                 </div>
               ))}
             </div>
@@ -57,20 +47,10 @@ function Details(props) {
           </div>
         ) : <p>Ocorreu algum erro no cadastro do seu produto</p>}
       </React.Fragment>
-      <Form.Control className="button-verde" as="select" onChange={(e) => {
-        setMethod(e.target.value)
-        calcPrice(e)
-      }}>
-        <option value="metodo">Método de Cálculo</option>
-        <option value="TRA">TRA</option>
-        <option value="2x">2x</option>
-        <option value="80%">80%</option>
-      </Form.Control>
-      {method !== '' && (
         <div>
-          <h5>Preço do produto: {productPrice} </h5>
+          <h5>Metódo de Cálculo: {product.method} </h5>
+          <h5>Preço do produto: {product.productPrice} </h5>
         </div>
-      )}
       <div>
         <h5>Modo de Preparo</h5>
         {product.prepare}
