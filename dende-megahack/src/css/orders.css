@@ -14,7 +14,6 @@
 .info-calendar {
   align-items: center;
   display: flex;
-  font-family: 'Josefin Sans', sans-serif;
   justify-content: space-between;
   padding: 1vh 8vw 3vh;
 }

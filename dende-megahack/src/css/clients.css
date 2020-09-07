@@ -10,46 +10,95 @@
   --verde-dois-dende: #61c190;
 }
 
-/* CLASSES REAPROVEITADAS DO CADASTRAR ENCOMENDA:
-className="add-order-container"
-className="label-form" */
 .form-container {
   margin: 1vh auto;
   max-width: 80%;
 }
 
 /* FIM PAG CADASTRAR CLIENTES */
-/* INICIO PAG CLIENTES
-CSS APROVEITADO DA PAG CALENDARIO
-className="info-calendar";
-className="add-button-calendar";
-*/
-.info-calendar .list-title {
-  border-bottom: 3px solid var(--laranja-dende);
-}
-
-.client-grid {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 1vh auto;
-  max-width: 80%;
-}
+/* INICIO PAG CLIENTES */
 
 .client-card {
   background-color: white;
   border: solid 1px var(--cinza-borda);
   box-shadow: 2px 2px 5px var(--cinza-texto);
   display: flex;
-  font-size: 0.9rem;
-  font-family: 'Josefin Sans', sans-serif;;
+  font-size: 0.8em;
   flex-direction: column;
-  margin: 1vh 1vw 3vh;
+  margin: 1vh auto 4vh;
   padding: 3vh 10vw 1vh 5vw;
-  max-width: 300px;
+  width: 50vh;
+}
+
+.client-card h4 {
+  color: var(--laranja-dende);
 }
 
 .client-card .email-info {
   font-style: italic;
   font-weight: 300;
   margin-top: none;
+}
+
+.clients-grid {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 2vh 0 0 15vw;
+  width: 80vw;
+}
+
+.clients-list-header {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 2vh 8vw 4vh;
+}
+
+.clients-list-title {
+  border-bottom: 3px solid var(--laranja-dende);
+}
+
+.clients-list-header .add-button-client {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0;
+  padding-top: 1vh;
+}
+
+.clients-list-header .add-button-client img {
+  height: 10vh;
+}
+
+.clients-list-header .add-button-client p {
+  font-size: 12pt;
+  line-height: 12pt;
+  margin-bottom: 0;
+  padding-top: 1vh;
+  text-align: center;
+}
+
+@media (min-width: 700px) {
+  .clients-grid {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 2vh 15vw 2vh 0;
+    width: 80vw;
+  }
+
+  .clients-list-header {
+    padding: 2vh 25vw 4vh;
+  }
+
+  .client-card {
+    display: flex;
+    font-size: 1em;
+    flex-direction: column;
+    margin: 2vh 2vw;
+    padding: 5vh 2vw 2vh 3vw;
+    width: 45vh;
+  }
+
 }
