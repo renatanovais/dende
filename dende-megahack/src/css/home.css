@@ -1,0 +1,56 @@
+:root {
+  --laranja-dende: #f6833c;
+  --azul-dende: #609bd2;
+  --verde-dende: #31b9a5;
+  --verde-dois-dende: #61c190;
+  --amarelo-dende: #ffd800;
+  --cinza-claro: #e5e5e5;
+  --laranja-dende-transparent: #fcd1b6;
+}
+
+/* PAG HOME */
+/* .form-container {
+  margin: 5vh 50vh 1vh;
+} */
+
+.buttons-add-container {
+  display: flex;
+  flex-flow: row;
+  /* font-size: 20px; */
+  justify-content: space-around;
+  /* margin: 10vh 45vh 5vh; */
+  margin: 10vh 10vw;
+  text-align: center;
+}
+
+.buttons-add-container img {
+  /* height: 95px; */
+  height: 85px;
+  padding: 1vh 1vw;
+}
+
+.buttons-add-container p {
+  font-size: 12px;
+}
+
+/* .button-add {
+  display: flex;
+  flex-direction: column;
+} */
+
+.home-buttons {
+  /* margin: 5vh 50vh 1vh; */
+  margin: 5vh 10vw 1vh;
+}
+
+@media(min-width: 700px) {
+  .buttons-add-container img {
+    height: 100px;
+  }
+  
+  .buttons-add-container p {
+    font-size: 18px;
+  }
+}
+
+/* FIM PAG HOME */

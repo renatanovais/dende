@@ -1,0 +1,46 @@
+:root {
+  --laranja-dende: #f6833c;
+  --azul-dende: #609bd2;
+  --verde-dende: #31b9a5;
+  --verde-dois-dende: #61c190;
+  --amarelo-dende: #ffd800;
+  --cinza-claro: #e5e5e5;
+  --laranja-dende-transparent: #fcd1b6;
+}
+
+/* HEADER */
+.header-comp {
+  align-items: center;
+  background-color: var(--cinza-claro);
+  display: flex;
+  font-size: 12pt;
+  justify-content: space-around;
+  /* padding: 1vh 55vh 1vh; */
+  padding: 1vh 5vw;
+}
+
+.header-comp #logo-img {
+  height: 50px;
+}
+
+.header-comp #configs-img {
+  margin-left: 1vh;
+  height: 35px;
+}
+
+.header-configs {
+  display: flex;
+  flex-direction: row;
+}
+
+.header-configs p {
+  /* background-color: var(--amarelo-dende); */
+  border-radius: 10px;
+  color: var(--laranja-dende);
+  font-size: 12px;
+  margin-right: 1vh;
+  margin-top: 3vh;
+  padding: 0 1vw;
+}
+
+/* FIM HEADER */

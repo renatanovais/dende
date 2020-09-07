@@ -1,0 +1,193 @@
+:root {
+  --laranja-dende: #f6833c;
+  --azul-dende: #609bd2;
+  --verde-dende: #31b9a5;
+  --verde-dois-dende: #61c190;
+  --amarelo-dende: #ffd800;
+  --cinza-claro: #e5e5e5;
+  --laranja-dende-transparent: #fcd1b6;
+}
+
+/* CSS AGENDA DE ENCOMENDAS */
+.info-calendar {
+  align-items: center;
+  display: flex;
+  font-family: 'Josefin Sans', sans-serif;
+  justify-content: space-between;
+  padding: 1vh 8vw 3vh;
+}
+
+.info-calendar .calendar-date {
+  border-bottom: 3px solid var(--laranja-dende);
+}
+
+.info-calendar .add-button-calendar {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0;
+  padding-top: 1vh;
+}
+
+.info-calendar .add-button-calendar img {
+  height: 8vh;
+}
+
+.info-calendar .add-button-calendar p {
+  font-size: 12px;
+  line-height: 12px;
+  margin-bottom: 0;
+  padding-top: 1vh;
+  text-align: center;
+}
+
+.calendar-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 2vh auto;
+  max-width: 90%;
+}
+
+.calendar-card {
+  background-image: linear-gradient(transparent, var(--laranja-dende-transparent), var(--laranja-dende));
+  border: none;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 15px;
+  height: 230px;
+  margin: 2vh 2vw;
+  width: 230px;
+}
+
+.calendar-card .client-name {
+  font-style: italic;
+  font-weight: 600;
+}
+
+.calendar-card .list-item {
+  background: none;
+  border-radius: 10px;
+  font-weight: 300;
+  margin-bottom: 1vh;
+  padding: 1vh 1vw 1vh 5vw;
+}
+
+.calendar-card .order-details p {
+  font-weight: 400;
+  font-style: italic;
+  margin: 2vh 0 0;
+}
+
+.calendar-card .order-details span {
+  font-weight: 300;
+  margin: 0;
+  padding: 0;
+}
+
+@media (min-width: 700px) {
+  .info-calendar {
+    padding: 2vh 10vw 4vh;
+  }
+
+  .info-calendar .calendar-date {
+    font-size: 22px;
+  }
+
+  .info-calendar .add-button-calendar img {
+    height: 10vh;
+  }
+  
+  .info-calendar .add-button-calendar p {
+    font-size: 14px;
+  }
+
+  .calendar-card .list-item {
+    padding: 1vh 1vw 1vh 3vw;
+  }
+}
+
+/* FIM CALENDARIO DE ENCOMENDAS */
+
+/* INICIO PAG ADD ENCOMENDA (ORDER) */
+.add-order-container {
+  display: flex;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 16px;
+  flex-flow: column;
+  margin: 2vh auto;
+  max-width: 80%;
+}
+
+.add-order-container h4 {
+  color: var(--laranja-dende);
+  font-style: italic;
+  font-weight: 500;
+  padding: 2vh 2vw;
+  text-align: center;
+}
+
+.add-order-container .link-add-client {
+  align-items: center;
+  display: flex;
+  margin: 1vh 4vw;
+}
+
+.add-order-container .link-add-client img {
+  height: 8vh;
+}
+
+.add-order-container .link-add-client p {
+  border-bottom: 1vh solid var(--verde-dende);
+  font-weight: 300;
+  margin: 0 4vw;
+}
+
+.add-order-container .list-client-select {
+  background-color: var(--verde-dende);
+  border: none;
+  color: var(--cinza-claro);
+  margin: 2vh auto 0;
+  outline: none;
+  width: 60%;
+}
+
+.add-order-container .list-client-select:hover {
+  opacity: 0.5;
+}
+
+.row-form {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  font-size: 15px;
+}
+
+.label-form {
+  margin: 2vh 0 0;
+}
+
+.row-form .product-input {
+  margin: 2vh auto;
+  max-width: 50%;
+}
+
+.row-form .qtd-input {
+  margin: 2vh auto;
+  max-width: 20%;
+}
+
+.check-input-button {
+  background-color: transparent;
+  border: none;
+  margin: 6vh 1vh 1vh 0;
+  padding: none;
+}
+
+.select-row {
+  display: flex;
+  margin: 2vh 5vw;
+  justify-content: space-around;
+}
+
+/* FIM PAG CADASTRAR ENCOMENDA - SEM RESPONSIVIDADE */
