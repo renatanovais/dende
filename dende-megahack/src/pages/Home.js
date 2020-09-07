@@ -33,7 +33,7 @@ export default function Home() {
           </Nav.Link>
         </Nav.Item>
         <Nav.Item className="button-add">
-          <Nav.Link href="/fichas-tecnicas/add">
+          <Nav.Link href="/fichas-tecnicas/">
             <img alt="Add encomenda" src={addFicha} height="95" />
             <p>Adicionar ficha técnica</p>
           </Nav.Link>
