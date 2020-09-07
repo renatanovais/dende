@@ -2,7 +2,7 @@ import { NEW_PRODUCT, SCHEDULE_IT, CLEAR_PRODUCTS } from '../actions';
 
 const order1 = {
   client: 'Rachel',
-  dueDate: '2021-10-02',
+  dueDate: '2021-09-02',
   delivery: 'Buscar',
   products: [{product: 'cafe', quantity: 5}],
   details: 'vai buscar de manhã'
@@ -10,7 +10,7 @@ const order1 = {
 
 const order2 = {
   client: 'Joey',
-  dueDate: '2020-05-10',
+  dueDate: '2020-09-08',
   delivery: 'Entregar',
   products: [{product: 'bolo', quantity: 2}, {product: 'brigadeiro', quantity: 3} ],
   details: 'entregar via rappi',
@@ -18,14 +18,15 @@ const order2 = {
 
 const order3 = {
   client: 'Monica',
-  dueDate: '1995-01-23',
+  dueDate: '2020-09-07',
   delivery: 'Buscar',
   products: [{product: 'bolo', quantity: 2}, {product: 'brigadeiro', quantity: 3} ],
   details: 'já pagou - vai buscar',
 }
+// [order1, order2, order3]
 
 const initialState = {
-  orders: [order1, order2, order3],
+  orders: [],
   product: '',
   quantity: 0,
   products: [],
