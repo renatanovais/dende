@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import '../css/header.css';
 import logoHorizontal from '../images/logos/logo_dende_horizontal_laranja.png';
 import configs from '../images/icons/configs-icon.png';
 

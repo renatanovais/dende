@@ -18,17 +18,23 @@ function TextInput(props) {
       <Form.Group>
         <Form.Label>Quantidade</Form.Label>
         <Form.Control
+          type="number" min="0.00" max="10000.00" step="0.01"
           placeholder={props.qtde}
           onChange={(e) => setQuantity(e.target.value)}
         />
       </Form.Group>
       <Form.Group>
         <Form.Label>Unidade</Form.Label>
-        <Form.Control placeholder={props.unidade} onChange={(e) => setUnity(e.target.value)} />
+        <Form.Control as="select" onChange={(e) => setUnity(e.target.value)}>
+          <option value="">Unid.</option>
+          <option value="kg">Kg</option>
+          <option value="litro">Litro</option>
+        </Form.Control>
       </Form.Group>
       <Form.Group>
-        <Form.Label>Preço</Form.Label>
+        <Form.Label>Preço Kg / L</Form.Label>
         <Form.Control
+          type="number" min="0.00" max="10000.00" step="0.01"
           placeholder={props.preco}
           onChange={(e) => setPrice(e.target.value)}
         />
