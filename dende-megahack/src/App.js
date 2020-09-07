@@ -9,7 +9,7 @@ import Products from './pages/fichas-tecnicas/Products';
 import NewProduct from './pages/fichas-tecnicas/NewProduct';
 import Order from './pages/encomendas/Order';
 import NewClient from './pages/NewClient';
-import Details from './pages/Details';
+import Details from './pages/fichas-tecnicas/Details';
 
 
 function App() {
@@ -22,6 +22,7 @@ function App() {
         <Route exact path="/clientes" component={Clients} />
         <Route exact path="/fichas-tecnicas/add" component={NewProduct} />
         <Route exact path="/fichas-tecnicas/details" component={Details} />
+        <Route exact path="/fichas-tecnicas/:indice/details" component={Details} />
         <Route exact path="/fichas-tecnicas" component={Products} />
         <Route exact path="/add-client" component={NewClient} />
         <Route exact path="/" component={Login} />

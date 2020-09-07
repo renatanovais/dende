@@ -1,16 +1,30 @@
-import React from 'react';
-import Header from '../components/Header';
+import React, { useState, useEffect } from 'react';
+import Header from '../../components/Header';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Dropdown from 'react-bootstrap/Dropdown';
+import { connect } from 'react-redux';
 
 
-function Details() {
+function Details(props) {
+  const { products } = props;
+  let total = 0;
+  const [product, setProduct] = useState('');
+  // const [total, setTotal] = useState(0);
+
+  useEffect(() => {
+    const { indice } = props.match.params;
+    setProduct(products[indice]);
+    console.log(products[indice]);
+  }, []);
   
   function calcValue(quantity, price) {
     const value = quantity * price;
+    total = (total + value);
+    console.log('oi');
     return value;
   };
+
   
   return (
     <React.Fragment>
@@ -19,16 +33,21 @@ function Details() {
       <React.Fragment>
         <h1>Detalhes do Produto</h1>
 
-        <Form.Row>
-          <Form.Group>
-            <Form.Label>Nome do Produto</Form.Label>
-            <Form.Control placeholder="Produto" />
-          </Form.Group>
-          <Form.Group>
-            <Form.Label>Data de Cadastro</Form.Label>
-            <Form.Control type="date" />
-          </Form.Group>
-        </Form.Row>
+        {product !== '' ? (
+          <div>
+            <p>{product.nameProduct}</p>
+            <p>{product.date}</p>
+            <div>
+              {product.itens.map((item) => (
+                <div>
+                  {item.item} | {item.quantity} | {item.unity} | {item.price} | {calcValue(item.quantity,item.price)}
+                </div>
+              ))}
+            </div>
+            <p>Rendimento: {product.produce}</p>
+            <p>Preço total da receita: {total}</p>
+          </div>
+        ) : <p>Ocorreu algum erro no cadastro do seu produto</p>}
       </React.Fragment>
 
       <Form.Group>
@@ -66,4 +85,8 @@ function Details() {
   );
 }
 
-export default Details;
+const mapStateToProps = (state) => ({
+  products: state.registerReducer.allProducts,
+})
+
+export default connect(mapStateToProps)(Details);

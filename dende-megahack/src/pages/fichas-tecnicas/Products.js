@@ -13,12 +13,12 @@ function Register(props) {
       <Header />
       <React.Fragment>
         <h1>Lista Produto</h1>
-        {products.length > 0 ? products.map((product) => (
+        {products.length > 0 ? products.map((product, i) => (
           <div>
             <img alt={product.nameProduct} src={product.img} height="150px" />
             <p>{product.nameProduct}</p>
             <p>Preço: </p>
-            <button>+ detalhes</button>
+            <button onClick={() => history.push(`/fichas-tecnicas/${i}/details`)}>+ detalhes</button>
           </div>
         )) : <h4>Nenhum produto cadastrado</h4>}
       </React.Fragment>
