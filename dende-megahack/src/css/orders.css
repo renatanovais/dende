@@ -58,7 +58,6 @@
     var(--laranja-dende)
   );
   border: none;
-  font-family: 'Josefin Sans', sans-serif;
   font-size: 15px;
   height: 230px;
   margin: 2vh 2vw;
@@ -123,12 +122,10 @@
   max-width: 80%;
 }
 
-.add-order-container h4 {
-  color: var(--laranja-dende);
-  font-style: italic;
-  font-weight: 500;
-  padding: 2vh 2vw;
-  text-align: center;
+.add-order-title {
+  border-bottom: 3px solid var(--laranja-dende);
+  width: 20vw;
+  margin: 2vh auto;
 }
 
 .add-order-container .link-add-client {
