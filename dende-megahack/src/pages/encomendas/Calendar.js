@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import '../../css/orders.css';
 import Button from 'react-bootstrap/Button';
 import Header from '../../components/Header';
 import GridCalendar from '../../components/GridCalendar';
@@ -107,7 +108,7 @@ function Calendar(props) {
   return (
     <div>
       <Header />
-      <div className="info-calendar">
+      <div className="calendar-header">
         <div className="calendar-date">
           {formatDate}
         </div>
@@ -116,11 +117,12 @@ function Calendar(props) {
           <p>Adicionar <br/> encomenda</p>
         </Link>
       </div>
-      <div>
-        <Button className="button-verde" onClick={() => showAll()}>Todas</Button>
-        <Button className="button-verde" onClick={() => filterDay(actualDate)}>Dia</Button>
-        <Button className="button-verde" onClick={() => filterWeek()}>Semana</Button>
-        <Button className="button-verde" onClick={() => filterMonth(actualDate)}>Mês</Button>
+      <div className="filter-buttons-container">
+        <div><p className="filter-text">Filtrar por:</p>
+        <Button className="button-verde filter-button" onClick={() => filterDay(actualDate)}>Dia</Button>
+        <Button className="button-verde filter-button" onClick={() => filterWeek()}>Semana</Button>
+        <Button className="button-verde filter-button" onClick={() => filterMonth(actualDate)}>Mês</Button>
+        <Button className="button-verde filter-button" onClick={() => showAll()}>Todas</Button>
       </div>
       <div className="calendar-grid">
       {filterOrders.length > 0 ? filterOrders.map((order, i) => <GridCalendar key={i} order={order} />) : <p>{`Não há encomendas ${emptyMessage}`}</p>}
