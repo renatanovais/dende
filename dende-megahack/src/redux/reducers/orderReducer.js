@@ -2,7 +2,7 @@ import { NEW_PRODUCT, SCHEDULE_IT, CLEAR_PRODUCTS } from '../actions';
 
 const order1 = {
   client: 'Rachel',
-  dueDate: '2020-10-02',
+  dueDate: '2021-09-02',
   delivery: 'Buscar',
   products: [{product: 'cafe', quantity: 5}],
   details: 'vai buscar de manhã'
@@ -10,7 +10,7 @@ const order1 = {
 
 const order2 = {
   client: 'Joey',
-  dueDate: '2020-08-08',
+  dueDate: '2020-09-08',
   delivery: 'Entregar',
   products: [{product: 'bolo', quantity: 2}, {product: 'brigadeiro', quantity: 3} ],
   details: 'entregar via rappi',
