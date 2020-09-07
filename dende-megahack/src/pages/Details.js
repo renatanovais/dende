@@ -4,10 +4,17 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Dropdown from 'react-bootstrap/Dropdown';
 
+
 function Details() {
+  
+  function calcValue(quantity, price) {
+    const value = quantity * price;
+    return value;
+  };
   
   return (
     <React.Fragment>
+  
       <Header />
       <React.Fragment>
         <h1>Detalhes do Produto</h1>
@@ -47,7 +54,7 @@ function Details() {
 
       <Form.Group>
         <Form.Label>Preço de Venda</Form.Label>
-        <Form.Control />
+        <Form.Control onChange={calcValue}/>
       </Form.Group>
 
       <Form.Group>
@@ -58,4 +65,5 @@ function Details() {
     </React.Fragment>
   );
 }
+
 export default Details;

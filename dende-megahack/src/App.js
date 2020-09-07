@@ -8,6 +8,7 @@ import Clients from './pages/Clients';
 import Products from './pages/Products';
 import Order from './pages/encomendas/Order';
 import NewClient from './pages/NewClient';
+import Details from './pages/Details';
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
         <Route exact path="/encomendas" component={Calendar} />
         <Route exact path="/clientes" component={Clients} />
         <Route exact path="/fichas-tecnicas" component={Products} />
+        <Route exact path="/fichas-tecnicas/details" component={Details} />
         <Route exact path="/add-client" component={NewClient} />
         <Route exact path="/" component={Login} />
       </Switch>
