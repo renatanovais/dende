@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { Link, useHistory } from 'react-router-dom';
 import Form from 'react-bootstrap/Form';
@@ -7,15 +7,30 @@ import InputText from '../../components/InputText';
 import Header from '../../components/Header';
 import { saveItem } from '../../redux/actions';
 
+
+const getFormatDate = (actualDate) => {
+  const actualDay = actualDate.getDate();
+  const actualMonth = (actualDate.getMonth() + 1);
+  const actualYear = actualDate.getFullYear();
+  return `${actualDay} / ${actualMonth} / ${actualYear}`
+}
+
 function NewProduct(props) {
   const history = useHistory();
+  const actualDate = new Date();
   const { itemList, registerItem } = props;
 
+  const [nameProduct, setNameProduct] = useState();
   const [prepare, setPrepare] = useState();
   const [img, setImg] = useState();
   const [produce, setProduce] = useState();
   const [date, setDate] = useState();
-  const [item, setItem] = useState();
+  const [formatDate, setFormatDate] = useState();
+
+  useEffect(() => {
+    setDate(actualDate);
+    setFormatDate(getFormatDate(actualDate));
+  }, []);
 
   return (
     <React.Fragment>
@@ -26,11 +41,12 @@ function NewProduct(props) {
         <Form.Row>
           <Form.Group>
             <Form.Label>Nome do Produto</Form.Label>
-            <Form.Control placeholder="Produto" onChange={(e) => setItem(e.target.value)} />
+            <Form.Control placeholder="Produto" onChange={(e) => setNameProduct(e.target.value)} />
           </Form.Group>
           <Form.Group>
             <Form.Label>Data de Cadastro</Form.Label>
-            <Form.Control type="date" onChange={(e) => setDate(e.target.value)} />
+            {formatDate}
+            {/* <Form.Control type="date" onChange={(e) => setDate(e.target.value)} /> */}
           </Form.Group>
         </Form.Row>
       </React.Fragment>
@@ -70,7 +86,7 @@ function NewProduct(props) {
           className="button-verde"
           type="button"
           onClick={() => {
-            registerItem(itemList, item, date, produce, prepare, img);
+            registerItem(itemList, nameProduct, date, produce, prepare, img);
             history.push('/fichas-tecnicas');
           }}
         >
@@ -95,8 +111,8 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  registerItem: (itemList, item, date, produce, prepare, img) =>
-    dispatch(saveItem(itemList, item, date, produce, prepare, img)),
+  registerItem: (itemList, nameProduct, date, produce, prepare, img) =>
+    dispatch(saveItem(itemList, nameProduct, date, produce, prepare, img)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(NewProduct);

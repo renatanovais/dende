@@ -9,7 +9,7 @@ import { saveItem } from '../../redux/actions';
 
 function Register(props) {
   const history = useHistory();
-  const { itemList, registerItem } = props;
+  const { products, itemList, registerItem } = props;
 
   const [prepare, setPrepare] = useState();
   const [img, setImg] = useState();
@@ -22,8 +22,8 @@ function Register(props) {
       <Header />
       <React.Fragment>
         <h1>Lista Produto</h1>
-
-        <Form.Row>
+        {products.length > 0 ? products.map((product) => <p>{product.nameProduct}</p>) : <h4>Nenhum produto cadastrado</h4>}
+        {/* <Form.Row>
           <Form.Group>
             <Form.Label>Nome do Produto</Form.Label>
             <Form.Control placeholder="Produto" onChange={(e) => setItem(e.target.value)} />
@@ -32,10 +32,10 @@ function Register(props) {
             <Form.Label>Data de Cadastro</Form.Label>
             <Form.Control type="date" onChange={(e) => setDate(e.target.value)} />
           </Form.Group>
-        </Form.Row>
+        </Form.Row> */}
       </React.Fragment>
 
-      <InputText item="Ingrediente" qtde="Quantidade" unidade="Unidade" preco="Preço" />
+      {/* <InputText item="Ingrediente" qtde="Quantidade" unidade="Unidade" preco="Preço" />
       {itemList.length > 0 ? (
         <div>
           {itemList.map((item) =>
@@ -85,13 +85,14 @@ function Register(props) {
         >
           Detalhes
         </Button>
-      </Form.Group>
+      </Form.Group> */}
     </React.Fragment>
   );
 }
 
 const mapStateToProps = (state) => ({
   itemList: state.registerReducer.itens,
+  products: state.registerReducer.allProducts,
 });
 
 const mapDispatchToProps = (dispatch) => ({
