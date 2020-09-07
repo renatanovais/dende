@@ -25,12 +25,12 @@ body {
 }
 
 .header-comp #logo-img {
-  height: 100px;
+  height: 70px;
 }
 
 .header-comp #configs-img {
   margin-left: 1vh;
-  height: 55px;
+  height: 40px;
 }
 
 .header-configs {
@@ -44,18 +44,6 @@ body {
   margin-right: 1vh;
   margin-top: 3vh;
   padding: 0 1vw;
-}
-
-@media (max-width: 600px) {
-  .header-comp #logo-img {
-    height: 70px;
-  }
-  
-  .header-comp #configs-img {
-    margin-left: 1vh;
-    height: 40px;
-  }
-  
 }
 
 @media (min-width: 900px) {
