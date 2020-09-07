@@ -14,7 +14,7 @@ function Order(props) {
   const history = useHistory();
   const { productList, registerOrder, clearProducts, clients } = props;
 
-  const [client, setClient] = useState();
+  const [client, setClient] = useState('client');
   const [date, setDate] = useState();
   const [delivery, setDelivery] = useState();
   const [details, setDetails] = useState();
@@ -23,15 +23,24 @@ function Order(props) {
 
   const dropdownClients = (param) => {
     return (
-      <Form.Control className="list-client-select" as="select" title="Clientes" onChange={(e) => {setClient(e.target.value); noClientsDisable()}}>
-        <option value="">Cliente</option>
-        {param.map((client, i) => <option key={i} value={client.name}>{client.name}</option>)}
-      </Form.Control>
+      <>
+        <Form.Control className="list-client-select" as="select" title="Clientes" onChange={(e) => {setClient(e.target.value); noClientsDisable(e)}}>
+          <option value="client">Cliente</option>
+          {param.map((client, i) => <option key={i} value={client.name}>{client.name}</option>)}
+        </Form.Control>
+        <Link className="link-add-client" to="/add-client">
+          <img alt="Add encomenda" src={addCliente} height="95" />
+        </Link>
+      </>
     );
   }
 
-  const noClientsDisable = () => {
-    if (client !== '') {
+  const noClientsDisable = (e) => {
+    if (client !== '' || client !== 'client') {
+      setDisableByClients(false);
+    } 
+    
+    if (e.target.value === 'client') {
       setDisableByClients(!disableByClients);
     }
   }
@@ -40,7 +49,7 @@ function Order(props) {
     if (client !== '' && productList.length > 0 && date && delivery) {
       setButtonDisable(false);
     }
-  })
+  }, [client, productList, date, delivery])
 
   return (
     <div>
@@ -69,8 +78,8 @@ function Order(props) {
               <Form.Label className="label-form">Escolha a opção de entrega</Form.Label>
               <Form.Control as="select" onChange={(e) => setDelivery(e.target.value)} disabled={disableByClients}>
                 <option value="">Selecione</option>
-                <option value="entregar">Entregar</option>
-                <option value="buscar">Buscar</option>
+                <option value="Entregar">Entregar</option>
+                <option value="Buscar">Buscar</option>
               </Form.Control>
             </Form.Group>
           </Form.Row>
