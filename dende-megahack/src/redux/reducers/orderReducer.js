@@ -23,9 +23,10 @@ const order3 = {
   products: [{product: 'bolo', quantity: 2}, {product: 'brigadeiro', quantity: 3} ],
   details: 'já pagou - vai buscar',
 }
+// [order1, order2, order3]
 
 const initialState = {
-  orders: [order1, order2, order3],
+  orders: [],
   product: '',
   quantity: 0,
   products: [],

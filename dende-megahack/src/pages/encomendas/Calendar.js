@@ -7,7 +7,7 @@ import GridCalendar from '../../components/GridCalendar';
 import addEncomenda from '../../images/icons/new-event-icon.png';
 
 function getWeekDates() {
-
+  // https://stackoverflow.com/questions/44958706/how-do-i-filter-the-dates-of-the-current-week-from-a-general-date-list-in-javasc
   let now = new Date();
   let dayOfWeek = now.getDay(); //0-6
   let numDay = now.getDate();
@@ -15,7 +15,6 @@ function getWeekDates() {
   let start = new Date(now); //copy
   start.setDate(numDay - dayOfWeek);
   start.setHours(0, 0, 0, 0);
-
 
   let end = new Date(now); //copy
   end.setDate(numDay + (7 - dayOfWeek));
@@ -52,6 +51,7 @@ function Calendar(props) {
   
   const showAll = () => {
     latestOrders(orders);
+    setEmptyMessage('cadastradas')
   }
   const filterDay = (actualDate) => {
     const filterByDay = orders.filter((order) => {
