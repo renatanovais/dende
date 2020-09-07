@@ -18,7 +18,7 @@ function Register(props) {
             <img alt={product.nameProduct} src={product.img} height="150px" />
             <p>{product.nameProduct}</p>
             <p>Preço: </p>
-            <button onClick={() => history.push(`/fichas-tecnicas/${i}/details`)}>+ detalhes</button>
+            <button onClick={() => history.push(`/fichas-tecnicas/details-${i}`)}>+ detalhes</button>
           </div>
         )) : <h4>Nenhum produto cadastrado</h4>}
       </React.Fragment>

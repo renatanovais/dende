@@ -21,8 +21,7 @@ function App() {
         <Route exact path="/encomendas" component={Calendar} />
         <Route exact path="/clientes" component={Clients} />
         <Route exact path="/fichas-tecnicas/add" component={NewProduct} />
-        <Route exact path="/fichas-tecnicas/details" component={Details} />
-        <Route exact path="/fichas-tecnicas/:indice/details" component={Details} />
+        <Route exact path="/fichas-tecnicas/details-:indice" component={Details} />
         <Route exact path="/fichas-tecnicas" component={Products} />
         <Route exact path="/add-client" component={NewClient} />
         <Route exact path="/" component={Login} />

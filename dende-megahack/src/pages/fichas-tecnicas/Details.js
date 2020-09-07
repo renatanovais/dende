@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import Header from '../../components/Header';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-import Dropdown from 'react-bootstrap/Dropdown';
 import { connect } from 'react-redux';
 
 
@@ -10,7 +9,7 @@ function Details(props) {
   const { products } = props;
   let total = 0;
   const [product, setProduct] = useState('');
-  // const [total, setTotal] = useState(0);
+  const [method, setMethod] = useState('');
 
   useEffect(() => {
     const { indice } = props.match.params;
@@ -38,38 +37,25 @@ function Details(props) {
             <p>{product.nameProduct}</p>
             <p>{product.date}</p>
             <div>
-              {product.itens.map((item) => (
-                <div>
+              {product.itens.map((item, i) => (
+                <div key={i}>
                   {item.item} | {item.quantity} | {item.unity} | {item.price} | {calcValue(item.quantity,item.price)}
                 </div>
               ))}
             </div>
             <p>Rendimento: {product.produce}</p>
-            <p>Preço total da receita: {total}</p>
+            <p>Custo total da receita: {total}</p>
           </div>
         ) : <p>Ocorreu algum erro no cadastro do seu produto</p>}
       </React.Fragment>
+      <Form.Control className="button-verde" as="select" onChange={(e) => setMethod(e.target.value)}>
+        <option value="metodo">Método de Cálculo</option>
+        <option value="TRA">TRA</option>
+      </Form.Control>
 
-      <Form.Group>
-        <Form.Label>Rendimento</Form.Label>
-        <Form.Control />
-      </Form.Group>
-
-      <Form.Group>
-        <Form.Label>Preço Total da Receita</Form.Label>
-        <Form.Control />
-      </Form.Group>
-
-      <Dropdown>
-        <Dropdown.Toggle variant="success" id="dropdown-basic" className="button-verde">
-          Método de Cálculo
-        </Dropdown.Toggle>
-
-        <Dropdown.Menu>
-          <Dropdown.Item href="#/action-1">TRA</Dropdown.Item>
-          <Dropdown.Item href="#/action-2">Outro</Dropdown.Item>
-        </Dropdown.Menu>
-      </Dropdown>
+      <div>
+        <h5>Preço do produto: {method === '' ? '' : total * 3} </h5>
+      </div>  
 
       <Form.Group>
         <Form.Label>Preço de Venda</Form.Label>
