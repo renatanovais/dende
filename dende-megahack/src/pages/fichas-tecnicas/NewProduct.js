@@ -39,8 +39,7 @@ function NewProduct(props) {
     <React.Fragment>
       <Header />
       <React.Fragment>
-        <h1>New Produto</h1>
-
+        <h1>Adicionar Produto</h1>
         <Form.Row>
           <Form.Group>
             <Form.Label>Nome do Produto</Form.Label>
@@ -48,7 +47,7 @@ function NewProduct(props) {
           </Form.Group>
           <Form.Group>
             <Form.Label>Data de Cadastro</Form.Label>
-            {formatDate}
+            <p>{formatDate}</p>
           </Form.Group>
         </Form.Row>
       </React.Fragment>
