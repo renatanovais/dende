@@ -47,7 +47,7 @@ export const scheduleIt = (products, client, dueDate, delivery, details) => ({
 
 export const SAVE_ITEM = 'SAVE_ITEM';
 
-export const saveItem = (itens, nameProduct, produce, prepare, date, img) => ({
+export const saveItem = (itens, nameProduct, date, produce, prepare, img) => ({
   type: SAVE_ITEM,
   itemList: { itens, nameProduct, date, produce, prepare, img },
 });

@@ -8,11 +8,14 @@ import Header from '../../components/Header';
 import { saveItem } from '../../redux/actions';
 
 
-const getFormatDate = (actualDate) => {
+const getDate = (actualDate) => {
   const actualDay = actualDate.getDate();
   const actualMonth = (actualDate.getMonth() + 1);
   const actualYear = actualDate.getFullYear();
-  return `${actualDay} / ${actualMonth} / ${actualYear}`
+  return {
+    showData: `${actualDay} / ${actualMonth} / ${actualYear}`,
+    saveData: `${actualYear}-${actualMonth}-${actualDay}`,
+  }
 }
 
 function NewProduct(props) {
@@ -21,15 +24,15 @@ function NewProduct(props) {
   const { itemList, registerItem } = props;
 
   const [nameProduct, setNameProduct] = useState();
-  const [prepare, setPrepare] = useState();
-  const [img, setImg] = useState();
-  const [produce, setProduce] = useState();
   const [date, setDate] = useState();
   const [formatDate, setFormatDate] = useState();
+  const [produce, setProduce] = useState();
+  const [prepare, setPrepare] = useState();
+  const [img, setImg] = useState();
 
   useEffect(() => {
-    setDate(actualDate);
-    setFormatDate(getFormatDate(actualDate));
+    setDate(getDate(actualDate).saveData);
+    setFormatDate(getDate(actualDate).showData);
   }, []);
 
   return (
@@ -46,7 +49,6 @@ function NewProduct(props) {
           <Form.Group>
             <Form.Label>Data de Cadastro</Form.Label>
             {formatDate}
-            {/* <Form.Control type="date" onChange={(e) => setDate(e.target.value)} /> */}
           </Form.Group>
         </Form.Row>
       </React.Fragment>
