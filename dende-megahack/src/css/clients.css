@@ -10,9 +10,24 @@
   --verde-dois-dende: #61c190;
 }
 
-.form-container {
+/* INICIO PAG CADASTRAR CLIENTE */
+.add-client-container {
+  display: flex;
+  font-size: 16px;
+  flex-flow: column;
+  margin: 2vh auto;
+  width: 50vw;
+}
+
+.add-client-forms {
   margin: 1vh auto;
-  max-width: 80%;
+  max-width: 60vw;
+}
+
+.add-client-title {
+  border-bottom: 3px solid var(--laranja-dende);
+  width: 40vw;
+  margin: 2vh auto;
 }
 
 /* FIM PAG CADASTRAR CLIENTES */
@@ -99,6 +114,25 @@
     margin: 2vh 2vw;
     padding: 5vh 2vw 2vh 3vw;
     width: 45vh;
+  }
+
+  .add-client-container {
+    display: flex;
+    font-size: 16px;
+    flex-flow: column;
+    margin: 2vh auto;
+    width: 40vw;
+  }
+  
+  .add-client-forms {
+    margin: 1vh auto;
+    max-width: 50vw;
+  }
+  
+  .add-client-title {
+    border-bottom: 3px solid var(--laranja-dende);
+    width: 40vw;
+    margin: 2vh auto;
   }
 
 }

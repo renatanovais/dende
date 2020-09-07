@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import { Link, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import '../css/clients.css';
 import Header from '../components/Header';
 import Form from 'react-bootstrap/Form';
@@ -9,7 +9,6 @@ import { saveClient } from '../redux/actions';
 
 function NewClient(props) {
   const history = useHistory();
-
   const { newClient } = props;
   const [name, setName] = useState('');
   const [birthday, setBirthday] = useState('');
@@ -21,9 +20,9 @@ function NewClient(props) {
   return (
     <div>
       <Header />
-      <div className="add-order-container">
-        <h4>Cadastrar cliente</h4>
-        <Form className="form-container">
+      <div className="add-client-container">
+        <h4 className="add-client-title">Cadastrar cliente</h4>
+        <Form className="add-client-forms">
           <Form.Row>
             <Form.Group>
               <Form.Label className="label-form">Nome completo:</Form.Label>
