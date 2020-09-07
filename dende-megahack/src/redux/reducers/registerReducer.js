@@ -9,6 +9,7 @@ const initialState = {
   img:'',
   prepare: '',
   produce: '',
+  allProducts: [],
 };
 
 export default function registerReducer(state = initialState, action) {
@@ -33,7 +34,8 @@ export default function registerReducer(state = initialState, action) {
     case SAVE_ITEM:
       return {
         ...state,
-        itens: [...state.itens, action.item],
+        itens: [],
+        allProducts: [...state.allProducts, action.itemList],
       };
     default:
       return state;

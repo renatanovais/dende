@@ -19,8 +19,9 @@ function App() {
         <Route exact path="/encomendas/add" component={Order} />
         <Route exact path="/encomendas" component={Calendar} />
         <Route exact path="/clientes" component={Clients} />
-        <Route exact path="/fichas-tecnicas" component={Products} />
+        <Route exact path="/fichas-tecnicas/add" component={Products} />
         <Route exact path="/fichas-tecnicas/details" component={Details} />
+        <Route exact path="/fichas-tecnicas" component={Products} />
         <Route exact path="/add-client" component={NewClient} />
         <Route exact path="/" component={Login} />
       </Switch>
