@@ -77,8 +77,8 @@ function Order(props) {
               <Form.Label className="label-form">Escolha a opção de entrega</Form.Label>
               <Form.Control as="select" onChange={(e) => setDelivery(e.target.value)} disabled={disableByClients}>
                 <option value="">Selecione</option>
-                <option value="entregar">Entregar</option>
-                <option value="buscar">Buscar</option>
+                <option value="Entregar">Entregar</option>
+                <option value="Buscar">Buscar</option>
               </Form.Control>
             </Form.Group>
           </Form.Row>

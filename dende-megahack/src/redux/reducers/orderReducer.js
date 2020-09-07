@@ -10,7 +10,7 @@ const order1 = {
 
 const order2 = {
   client: 'Joey',
-  dueDate: '2020-05-10',
+  dueDate: '1998-05-10',
   delivery: 'Entregar',
   products: [{product: 'bolo', quantity: 2}, {product: 'brigadeiro', quantity: 3} ],
   details: 'entregar via rappi',
@@ -18,7 +18,7 @@ const order2 = {
 
 const order3 = {
   client: 'Monica',
-  dueDate: '1995-01-23',
+  dueDate: '2010-01-23',
   delivery: 'Buscar',
   products: [{product: 'bolo', quantity: 2}, {product: 'brigadeiro', quantity: 3} ],
   details: 'já pagou - vai buscar',
