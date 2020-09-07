@@ -1,14 +1,13 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import Form from 'react-bootstrap/Form';
-import InputText from '../components/InputText';
-import Header from '../components/Header';
 import Button from 'react-bootstrap/Button';
-import { saveItem } from '../redux/actions';
-import { useHistory } from 'react-router-dom';
+import InputText from '../../components/InputText';
+import Header from '../../components/Header';
+import { saveItem } from '../../redux/actions';
 
-function Register(props) {
+function NewProduct(props) {
   const history = useHistory();
   const { itemList, registerItem } = props;
 
@@ -22,7 +21,7 @@ function Register(props) {
     <React.Fragment>
       <Header />
       <React.Fragment>
-        <h1>Cadastrar Produto</h1>
+        <h1>New Produto</h1>
 
         <Form.Row>
           <Form.Group>
@@ -100,4 +99,4 @@ const mapDispatchToProps = (dispatch) => ({
     dispatch(saveItem(itemList, item, date, produce, prepare, img)),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Register);
+export default connect(mapStateToProps, mapDispatchToProps)(NewProduct);
