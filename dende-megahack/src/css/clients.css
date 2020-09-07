@@ -121,7 +121,7 @@
     font-size: 16px;
     flex-flow: column;
     margin: 2vh auto;
-    width: 40vw;
+    width: 2  0vw;
   }
   
   .add-client-forms {
@@ -131,7 +131,7 @@
   
   .add-client-title {
     border-bottom: 3px solid var(--laranja-dende);
-    width: 40vw;
+    width: 20vw;
     margin: 2vh auto;
   }
 
