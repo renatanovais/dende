@@ -10,29 +10,6 @@
   --verde-dois-dende: #61c190;
 }
 
-body {
-  font-family: 'Josefin Sans', sans-serif;
-  background-color: var(--cinza-fundo);
-  color: var(--cinza-texto);
-  font-size: 14pt;
-}
-
-.button-verde {
-  background-color: var(--verde-dende);
-  border-color: var(--verde-dende);
-  border-radius: 10%;
-  color: white !important;
-  padding: 10% 20%;
-}
-
-.button-verde:hover {
-  background-color: var(--amarelo-dende);
-  border-color: var(--amarelo-dende);
-  border-radius: 10%; 
-  color: white !important;
-  padding: 10% 20%;
-}
-
 .App-logo {
   margin: 3vh auto 2vh;
   display: flex;
@@ -46,6 +23,10 @@ body {
 .button-div {
   display: flex;
   justify-content: center;
+}
+
+.button-verde, .button-verde:hover {
+  border-radius: 10%;
 }
 
 .login-container {

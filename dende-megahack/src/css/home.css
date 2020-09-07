@@ -10,35 +10,6 @@
   --verde-dois-dende: #61c190;
 }
 
-a {
-  color: black;
-}
-
-a:hover {
-  color: var(--laranja-dende);
-  text-decoration: none;
-}
-
-body {
-  font-family: 'Josefin Sans', sans-serif;
-  background-color: var(--cinza-fundo);
-  color: var(--cinza-texto);
-}
-
-.button-laranja {
-  background-color: var(--laranja-dende);
-  border-color: var(--laranja-dende);
-/*   height: 3em;
-  margin-bottom: 2em; */
-}
-
-.button-laranja:hover {
-  background-color: var(--verde-dende);
-  border-color: var(--verde-dende);
-/*   height: 3em;
-  margin-bottom: 2em; */
-}
-
 .buttons-add-container {
   display: flex;
   flex-flow: row;

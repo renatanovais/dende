@@ -1,0 +1,51 @@
+:root {
+  --amarelo-dende: #ffd800;
+  --azul-dende: #609bd2;
+  --cinza-borda: #d6d6d6;
+  --cinza-texto: #444444;
+  --cinza-fundo: #f2f2f2;
+  --laranja-dende: #f6833c;
+  --laranja-dende-transparent: #fcd1b6;
+  --verde-dende: #31b9a5;
+  --verde-dois-dende: #61c190;
+}
+
+body {
+  font-family: 'Josefin Sans', sans-serif;
+  background-color: var(--cinza-fundo);
+  color: var(--cinza-texto);
+  font-size: 14pt;
+}
+
+a {
+  color: black;
+}
+
+a:hover {
+  color: var(--laranja-dende);
+  text-decoration: none;
+}
+
+.button-verde {
+  background-color: var(--verde-dende);
+  border-color: var(--verde-dende);
+  color: white !important;
+}
+
+.button-verde:hover {
+  background-color: var(--amarelo-dende);
+  border-color: var(--amarelo-dende);
+  color: white !important;
+}
+
+.button-laranja {
+  background-color: var(--laranja-dende); 
+  border-color: var(--laranja-dende);
+  color: white !important;
+}
+
+.button-laranja:hover {
+  background-color: var(--verde-dende);
+  border-color: var(--verde-dende);
+  color: white !important;
+}
