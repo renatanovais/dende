@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import '../css/clients.css';
 import Header from '../components/Header';
 import ClientCard from '../components/ClientCard';
 import addCliente from '../images/icons/new-client-icon.png';

@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import '../../css/orders.css';
 import Header from '../../components/Header';
 import GridCalendar from '../../components/GridCalendar';
 import addEncomenda from '../../images/icons/new-event-icon.png';

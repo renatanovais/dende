@@ -8,6 +8,53 @@
   --laranja-dende-transparent: #fcd1b6;
 }
 
+a {
+  color: black;
+}
+
+a:hover {
+  color: gray;
+  text-decoration: none;
+}
+
+body {
+  margin: 0 auto;
+  /* text-align: center; */
+  font-size: 14pt;
+}
+
+h1, h2 {
+  padding-top: 2vh;
+}
+
+.button-laranja {
+  background-color: var(--laranja-dende);
+  border-color: var(--laranja-dende);
+  height: 3em;
+  margin-bottom: 2em;
+}
+
+.button-laranja:hover {
+  background-color: var(--verde-dende);
+  border-color: var(--verde-dende);
+  height: 3em;
+  margin-bottom: 2em;
+}
+
+.button-verde {
+  background-color: var(--verde-dende);
+  border-color: var(--verde-dende);
+  color: black;
+  font-size: 16pt;
+}
+
+.button-verde:hover {
+  background-color: var(--laranja-dende);
+  border-color: var(--laranja-dende);
+  color: gray;
+  margin-bottom: 2em;
+}
+
 /* HEADER */
 .header-comp {
   align-items: center;

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import '../css/home.css';
 import Button from 'react-bootstrap/Button';
 import addEncomenda from '../images/icons/new-event-icon.png';
 import addFicha from '../images/icons/new-recipe-icon.png';
