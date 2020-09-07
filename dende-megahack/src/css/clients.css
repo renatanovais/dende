@@ -1,0 +1,138 @@
+:root {
+  --amarelo-dende: #ffd800;
+  --azul-dende: #609bd2;
+  --cinza-borda: #d6d6d6;
+  --cinza-texto: #444444;
+  --cinza-fundo: #f2f2f2;
+  --laranja-dende: #f6833c;
+  --laranja-dende-transparent: #fcd1b6;
+  --verde-dende: #31b9a5;
+  --verde-dois-dende: #61c190;
+}
+
+/* INICIO PAG CADASTRAR CLIENTE */
+.add-client-container {
+  display: flex;
+  font-size: 16px;
+  flex-flow: column;
+  margin: 2vh auto;
+  width: 50vw;
+}
+
+.add-client-forms {
+  margin: 1vh auto;
+  max-width: 60vw;
+}
+
+.add-client-title {
+  border-bottom: 3px solid var(--laranja-dende);
+  width: 40vw;
+  margin: 2vh auto;
+}
+
+/* FIM PAG CADASTRAR CLIENTES */
+/* INICIO PAG CLIENTES */
+
+.client-card {
+  background-color: white;
+  border: solid 1px var(--cinza-borda);
+  box-shadow: 2px 2px 5px var(--cinza-texto);
+  display: flex;
+  font-size: 0.8em;
+  flex-direction: column;
+  margin: 1vh auto 4vh;
+  padding: 3vh 10vw 1vh 5vw;
+  width: 50vh;
+}
+
+.client-card h4 {
+  color: var(--laranja-dende);
+}
+
+.client-card .email-info {
+  font-style: italic;
+  font-weight: 300;
+  margin-top: none;
+}
+
+.clients-grid {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 2vh 0 0 15vw;
+  width: 80vw;
+}
+
+.clients-list-header {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 2vh 8vw 4vh;
+}
+
+.clients-list-title {
+  border-bottom: 3px solid var(--laranja-dende);
+}
+
+.clients-list-header .add-button-client {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0;
+  padding-top: 1vh;
+}
+
+.clients-list-header .add-button-client img {
+  height: 10vh;
+}
+
+.clients-list-header .add-button-client p {
+  font-size: 12pt;
+  line-height: 12pt;
+  margin-bottom: 0;
+  padding-top: 1vh;
+  text-align: center;
+}
+
+@media (min-width: 700px) {
+  .clients-grid {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 2vh 15vw 2vh 0;
+    width: 80vw;
+  }
+
+  .clients-list-header {
+    padding: 2vh 25vw 4vh;
+  }
+
+  .client-card {
+    display: flex;
+    font-size: 1em;
+    flex-direction: column;
+    margin: 2vh 2vw;
+    padding: 5vh 2vw 2vh 3vw;
+    width: 45vh;
+  }
+
+  .add-client-container {
+    display: flex;
+    font-size: 16px;
+    flex-flow: column;
+    margin: 2vh auto;
+    width: 2  0vw;
+  }
+  
+  .add-client-forms {
+    margin: 1vh auto;
+    max-width: 50vw;
+  }
+  
+  .add-client-title {
+    border-bottom: 3px solid var(--laranja-dende);
+    width: 20vw;
+    margin: 2vh auto;
+  }
+
+}

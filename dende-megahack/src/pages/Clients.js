@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import '../css/clients.css';
 import Header from '../components/Header';
 import ClientCard from '../components/ClientCard';
 import addCliente from '../images/icons/new-client-icon.png';
@@ -10,14 +11,14 @@ function Clients(props) {
   return (
     <div>
       <Header />
-      <div className="info-calendar">
-        <h4 className="list-title">Lista de Clientes</h4>
-        <Link className="add-button-calendar" to="/add-client">
+      <div className="clients-list-header">
+        <h4 className="clients-list-title">Lista de Clientes</h4>
+        <Link className="add-button-client" to="/add-client">
           <img alt="Add cliente" src={addCliente} />
           <p>Adicionar <br/> cliente</p>
         </Link>
       </div>
-      <div className="client-grid">
+      <div className="clients-grid">
         {clients.length === 0 ? <p>Nenhum cliente cadastrado</p>
         :
         clients.map((client) => (

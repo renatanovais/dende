@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import '../css/login.css'
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import { doLogin } from '../redux/actions';
@@ -20,28 +21,32 @@ function Login(props) {
 
   return (
     <React.Fragment>
-      <div className="App-logo">
-        <img alt="Dende" src={logo} />
-      </div>
-      <div>
-        <Form className="login-container">
-          <Form.Group controlId="formLogin">
-            <Form.Label className="form-label">E-mail:</Form.Label>
-            <Form.Control className="login-form" type="email" placeholder="Email" onChange={(e) => setEmail(e.target.value)} />
-            <Form.Text className="text-muted">
-              Seu e-mail está seguro conosco. Não iremos compartilhar seus dados.
+      <div className="login-container">
+        <div className="App-logo">
+          <img alt="Dende" src={logo} />
+        </div>
+        <div>
+          <Form>
+            <Form.Group controlId="formLogin">
+              <Form.Label className="form-label">E-mail:</Form.Label>
+              <Form.Control className="login-form" type="email" placeholder="Email" onChange={(e) => setEmail(e.target.value)} />
+              <Form.Text className="text-muted">
+                Seu e-mail está seguro conosco. Não iremos compartilhar seus dados.
             </Form.Text>
-          </Form.Group>
-          <Form.Group controlId="formLogin">
-            <Form.Label className="form-label">Senha:</Form.Label>
-            <Form.Control className="login-form" type="password" placeholder="Senha" onChange={(e) => setSenha(e.target.value)} />
-          </Form.Group>
+            </Form.Group>
+            <Form.Group controlId="formLogin">
+              <Form.Label className="form-label">Senha:</Form.Label>
+              <Form.Control className="login-form" type="password" placeholder="Senha" onChange={(e) => setSenha(e.target.value)} />
+            </Form.Group>
+          </Form>
+        </div>
+        <div className="button-div">
           <Link className="link-container" to="/home">
             <Button className="button-verde" type="button" onClick={() => login(email, senha)} >
               Entrar
             </Button>
           </Link>
-        </Form>
+        </div>
       </div>
     </React.Fragment>
   )

@@ -26,7 +26,7 @@ const order3 = {
 // [order1, order2, order3]
 
 const initialState = {
-  orders: [],
+  orders: [order1, order2, order3],
   product: '',
   quantity: 0,
   products: [],
