@@ -113,3 +113,17 @@
 
 /* FIM PAG LISTA PRODUTOS */
 /* INICIO PAG DETALHE PRODUTO */
+
+/* FIM PAG DETALHE PRODUTO */
+/* INICIO PAG NEW PRODUCT */
+.add-product-container {
+  display: flex;
+  font-size: 16px;
+  flex-flow: column;
+  margin: 2vh auto;
+  max-width: 80%;
+}
+
+.date-info {
+  padding: 1.5vh 0 0;
+}

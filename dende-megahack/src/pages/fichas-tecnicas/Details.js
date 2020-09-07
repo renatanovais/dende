@@ -31,7 +31,7 @@ function Details(props) {
       <Header />
       <div className="products-list-header">
         <h4 className="products-list-title">Detalhes do Produto</h4>
-        <Link className="add-button-product" to="/fichas-tecnicas/add">
+        <Link className="add-button-product" to="/fichas-tecnicas">
           <img alt="Voltar" src={returnLogo} height="95" />
           <p>Voltar</p>
         </Link>

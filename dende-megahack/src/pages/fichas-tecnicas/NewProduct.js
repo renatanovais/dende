@@ -6,6 +6,9 @@ import Button from 'react-bootstrap/Button';
 import InputText from '../../components/InputText';
 import Header from '../../components/Header';
 import { saveItem } from '../../redux/actions';
+import '../../css/products.css';
+import returnLogo from '../../images/icons/return-verde.svg';
+
 
 
 const getDate = (actualDate) => {
@@ -65,76 +68,86 @@ function NewProduct(props) {
   return (
     <React.Fragment>
       <Header />
-      <React.Fragment>
-        <h1>Adicionar Produto</h1>
-        <Form.Row>
-          <Form.Group>
-            <Form.Label>Nome do Produto</Form.Label>
-            <Form.Control placeholder="Produto" onChange={(e) => setNameProduct(e.target.value)} />
-          </Form.Group>
-          <Form.Group>
-            <Form.Label>Data de Cadastro</Form.Label>
-            <p>{formatDate}</p>
-          </Form.Group>
-        </Form.Row>
-      </React.Fragment>
+      <div className="products-list-header">
+        <h4 className="products-list-title">Adicionar Ficha Técnica</h4>
+        <Link className="add-button-product" to="/fichas-tecnicas">
+          <img alt="Voltar" src={returnLogo} height="95" />
+          <p>Voltar</p>
+        </Link>
+      </div>
+      <div className="add-product-container">
+        <React.Fragment className="">
+          <Form.Row className="row-form">
+            <Form.Group>
+              <Form.Label className="label-form">Nome do Produto</Form.Label>
+              <Form.Control placeholder="Produto" onChange={(e) => setNameProduct(e.target.value)} />
+            </Form.Group>
+            <Form.Group>
+              <Form.Label className="label-form">Data de Cadastro</Form.Label>
+              <p className="date-info">{formatDate}</p>
+            </Form.Group>
+          </Form.Row>
+        </React.Fragment>
 
-      <InputText item="Ingrediente" qtde="Quantidade" unidade="Unidade" preco="Preço" />
-      {itemList.length > 0 ? (
-        <div>
-          {itemList.map((item) =>
-            item > 0 && item < 1 ? (
-              <InputText />
-            ) : (
-              <InputText item="Ingrediente" qtde="Quantidade" unidade="Unidade" preco="Preço" />
-            ),
-          )}
-        </div>
-      ) : (
-        false
-      )}
-      <Form.Control className="button-verde" as="select" onChange={(e) => {
-        setMethod(e.target.value)
-        methodsCalc(e.target.value)
-      }}>
-        <option value="metodo">Método de Cálculo</option>
-        <option value="TRA">TRA</option>
-        <option value="2x">2x</option>
-        <option value="80%">80%</option>
-      </Form.Control>
-      {method !== '' && (
-        <div>
-          <h5>Preço do produto: {productPrice} </h5>
-        </div>
-      )}
-      <Form.Group>
-        <Form.Label>Rendimento</Form.Label>
-        <Form.Control onChange={(e) => setProduce(e.target.value)} />
-      </Form.Group>
+        <InputText item="Ingrediente" qtde="Quantidade" unidade="Unidade" preco="Preço" />
+        {itemList.length > 0 ? (
+          <div>
+            {itemList.map((item) =>
+              item > 0 && item < 1 ? (
+                <InputText />
+              ) : (
+                <InputText item="Ingrediente" qtde="Quantidade" unidade="Unidade" preco="Preço" />
+              ),
+            )}
+          </div>
+        ) : (
+          false
+        )}
+        <Form.Control className="button-verde" as="select" onChange={(e) => {
+          setMethod(e.target.value)
+          methodsCalc(e.target.value)
+        }}>
+          <option value="metodo">Método de Cálculo</option>
+          <option value="TRA">TRA</option>
+          <option value="2x">2x</option>
+          <option value="80%">80%</option>
+        </Form.Control>
+        {method !== '' && (
+          <div>
+            <h5>Preço do produto: {productPrice} </h5>
+          </div>
+        )}
+        <Form.Group>
+          <Form.Label className="label-form">Rendimento</Form.Label>
+          <Form.Control onChange={(e) => setProduce(e.target.value)} />
+        </Form.Group>
 
-      <Form.Group>
-        <Form.Label>Modo de Preparo</Form.Label>
-        <Form.Control as="textarea" rows="3" onChange={(e) => setPrepare(e.target.value)} />
-      </Form.Group>
+        <Form.Group>
+          <Form.Label className="label-form">Modo de Preparo</Form.Label>
+          <Form.Control as="textarea" rows="3" onChange={(e) => setPrepare(e.target.value)} />
+        </Form.Group>
 
-      <Form.Control
-        placeholder="URL da Imagem do seu Produto"
-        onChange={(e) => setImg(e.target.value)}
-      />
-      <Link to="https://pt-br.imgbb.com/">Saiba como obter a URL da sua imagem</Link>
-      <Form.Group>
-        <Button
-          className="button-verde"
-          type="button"
-          disabled={saveDisable}
-          onClick={() => {
-            registerItem(itemList, nameProduct, date, produce, prepare, img, productPrice);
-            history.push('/fichas-tecnicas');
-          }}
-        >
-          Salvar
-        </Button>
-      </Form.Group>
+        <Form.Control
+          placeholder="URL da Imagem do seu Produto"
+          onChange={(e) => setImg(e.target.value)}
+        />
+        <Form.Text className="text-muted">
+          <Link to="https://pt-br.imgbb.com/">Saiba como obter a URL da sua imagem</Link>
+        </Form.Text>
+        <Form.Group>
+          <Button
+            className="button-verde"
+            type="button"
+            disabled={saveDisable}
+            onClick={() => {
+              registerItem(itemList, nameProduct, date, produce, prepare, img, productPrice);
+              history.push('/fichas-tecnicas');
+            }}
+          >
+            Salvar
+          </Button>
+        </Form.Group>
+      </div>
     </React.Fragment>
   );
 }
