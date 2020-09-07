@@ -123,9 +123,10 @@ function Calendar(props) {
         <Button className="button-verde filter-button" onClick={() => filterWeek()}>Semana</Button>
         <Button className="button-verde filter-button" onClick={() => filterMonth(actualDate)}>Mês</Button>
         <Button className="button-verde filter-button" onClick={() => showAll()}>Todas</Button>
-      </div>
-      <div className="calendar-grid">
-      {filterOrders.length > 0 ? filterOrders.map((order, i) => <GridCalendar key={i} order={order} />) : <p>{`Não há encomendas ${emptyMessage}`}</p>}
+        </div>
+        <div className="calendar-grid">
+        {filterOrders.length > 0 ? filterOrders.map((order, i) => <GridCalendar key={i} order={order} />) : <p>{`Não há encomendas ${emptyMessage}`}</p>}
+        </div>
       </div>
     </div>
   )
