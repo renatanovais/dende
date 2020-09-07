@@ -91,16 +91,7 @@ function NewProduct(props) {
             history.push('/fichas-tecnicas');
           }}
         >
-          Ok
-        </Button>
-      </Form.Group>
-      <Form.Group>
-        <Button
-          className="button-verde"
-          type="button"
-          onClick={() => history.push('/fichas-tecnicas/details')}
-        >
-          Detalhes
+          Salvar
         </Button>
       </Form.Group>
     </React.Fragment>

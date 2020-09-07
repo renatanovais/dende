@@ -17,7 +17,6 @@ function Details(props) {
   useEffect(() => {
     const { indice } = props.match.params;
     setProduct(products[indice]);
-    console.log(products[indice]);
   }, []);
   
   function calcCost(quantity, price) {
@@ -28,7 +27,10 @@ function Details(props) {
   };
 
   const calcPrice = (e) => {
-    if (e.target.value === 'TRA') return setProductPrice(3 * total);
+    const calcMethod = e.target.value;
+    if (calcMethod === 'TRA') return setProductPrice(3 * total);
+    if (calcMethod === '2x') return setProductPrice(2 * total);
+    if (calcMethod === '80%') return setProductPrice(1.8 * total);
   }
 
   
@@ -61,6 +63,8 @@ function Details(props) {
       }}>
         <option value="metodo">Método de Cálculo</option>
         <option value="TRA">TRA</option>
+        <option value="2x">2x</option>
+        <option value="80%">80%</option>
       </Form.Control>
       {method !== '' && (
         <div>
