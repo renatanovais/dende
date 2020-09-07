@@ -6,14 +6,31 @@ import Header from '../../components/Header';
 import GridCalendar from '../../components/GridCalendar';
 import addEncomenda from '../../images/icons/new-event-icon.png';
 
+function getWeekDates() {
+
+  let now = new Date();
+  let dayOfWeek = now.getDay(); //0-6
+  let numDay = now.getDate();
+
+  let start = new Date(now); //copy
+  start.setDate(numDay - dayOfWeek);
+  start.setHours(0, 0, 0, 0);
+
+
+  let end = new Date(now); //copy
+  end.setDate(numDay + (7 - dayOfWeek));
+  end.setHours(0, 0, 0, 0);
+
+  return [start, end];
+}
+
 function Calendar(props) {
   const { orders } = props;
   const actualDate = new Date();
   const [filterOrders, setFilterOrders] = useState(orders);
   const [formatDate, setFormatDate] = useState();
   const [emptyMessage, setEmptyMessage] = useState('cadastradas');
-  const [disableDay, setDisableDay] = useState(false);
-  const [disableMonth, setDisableMonth] = useState(false);
+  const [weekStart, weekEnd] = getWeekDates();
   
   const getDate = (actualDate) => {
     const actualDay = actualDate.getDate();
@@ -22,9 +39,9 @@ function Calendar(props) {
     return `${actualDay} / ${actualMonth} / ${actualYear}`
   }
 
-  const latestOrders = () => {
-    if (orders.length > 0) {
-      const changeDate = orders.slice().sort((a, b) => {
+  const latestOrders = (array) => {
+    if (array.length > 0) {
+      const changeDate = array.slice().sort((a, b) => {
         const dateA = new Date(a.dueDate);
         const dateB = new Date(b.dueDate);
         return dateA - dateB;
@@ -34,20 +51,37 @@ function Calendar(props) {
   }
   
   const showAll = () => {
-    setFilterOrders(orders);
-    latestOrders();
+    latestOrders(orders);
   }
   const filterDay = (actualDate) => {
     const filterByDay = orders.filter((order) => {
       const orderDate = new Date(order.dueDate);
-      const comparison = ((orderDate.getDate() + 1) === actualDate.getDate() && orderDate.getMonth() === actualDate.getMonth() && orderDate.getFullYear() === actualDate.getFullYear());
+      const comparison = ((orderDate.getDate() + 1) <= actualDate.getDate() && orderDate.getMonth() === actualDate.getMonth() && orderDate.getFullYear() === actualDate.getFullYear());
       return (comparison);
     });
     if (filterByDay.length === 0) {
       setFilterOrders([]);
       return setEmptyMessage('para hoje');
     } else {
-      setFilterOrders(filterByDay);
+      latestOrders(filterByDay);
+    };
+  }
+
+  const filterWeek = () => {
+    const filterByWeek = orders.filter((order) => {
+      const orderDate = new Date(order.dueDate);
+      console.log('order', orderDate);
+      console.log('start', weekStart);
+      console.log('end', weekEnd);
+      const comparison = (weekStart.getDate() <= orderDate.getDate() && weekEnd.getDate() >= orderDate.getDate() && weekStart.getMonth() === orderDate.getMonth() && weekStart.getFullYear() === orderDate.getFullYear());
+      console.log(comparison);
+      return (comparison);
+    });
+    if (filterByWeek.length === 0) {
+      setFilterOrders([]);
+      return setEmptyMessage('nesta semana');
+    } else {
+      latestOrders(filterByWeek);
     };
   }
 
@@ -61,13 +95,13 @@ function Calendar(props) {
       setFilterOrders([]);
       return setEmptyMessage('neste mês');
     } else {
-      setFilterOrders(filterByMonth);
+      latestOrders(filterByMonth);
     };
   }
   
   useEffect(() => {
     setFormatDate(getDate(actualDate));
-    latestOrders();
+    latestOrders(orders);
   }, [])
 
   return (
@@ -85,7 +119,7 @@ function Calendar(props) {
       <div>
         <Button className="button-verde" onClick={() => showAll()}>Todas</Button>
         <Button className="button-verde" onClick={() => filterDay(actualDate)}>Dia</Button>
-        <Button className="button-verde">Semana</Button>
+        <Button className="button-verde" onClick={() => filterWeek()}>Semana</Button>
         <Button className="button-verde" onClick={() => filterMonth(actualDate)}>Mês</Button>
       </div>
       <div className="calendar-grid">
