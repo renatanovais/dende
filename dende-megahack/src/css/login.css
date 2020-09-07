@@ -4,74 +4,57 @@
   --verde-dende: #31b9a5;
   --verde-dois-dende: #61c190;
   --amarelo-dende: #ffd800;
-  --cinza-claro: #e5e5e5;
+  --cinza-fundo: #f2f2f2;
+  --cinza-borda: #d6d6d6;
+  --cinza-texto: #444444;
   --laranja-dende-transparent: #fcd1b6;
 }
 
-a {
-  color: black;
-}
-
-a:hover {
-  color: gray;
-  text-decoration: none;
-}
-
 body {
-  margin: 0 auto;
-  /* text-align: center; */
-  font-size: 14pt;
-}
-
-h1, h2 {
-  padding-top: 2vh;
-}
-
-.button-laranja {
-  background-color: var(--laranja-dende);
-  border-color: var(--laranja-dende);
-  height: 3em;
-  margin-bottom: 2em;
-}
-
-.button-laranja:hover {
-  background-color: var(--verde-dende);
-  border-color: var(--verde-dende);
-  height: 3em;
-  margin-bottom: 2em;
+  font-family: 'Josefin Sans', sans-serif;
+  background-color: var(--cinza-fundo);
+  color: var(--cinza-texto);
 }
 
 .button-verde {
   background-color: var(--verde-dende);
   border-color: var(--verde-dende);
-  color: black;
-  font-size: 16pt;
+  border-radius: 10%;
+  color: white !important;
+  padding: 10% 20%;
 }
 
 .button-verde:hover {
-  background-color: var(--laranja-dende);
-  border-color: var(--laranja-dende);
-  color: gray;
-  margin-bottom: 2em;
+  background-color: var(--amarelo-dende);
+  border-color: var(--amarelo-dende);
+  border-radius: 10%; 
+  color: white !important;
+  padding: 10% 20%;
 }
 
-/* LOGIN.CSS */
 .App-logo {
   margin: 3vh auto 2vh;
-  text-align: center;
+  display: flex;
+  justify-content: center;
 }
 
 .App-logo img {
-  /* height: 50vh; */
   height: 40vh;
 }
 
+.button-div {
+  display: flex;
+  justify-content: center;
+}
+
 .login-container {
+  background-color: white;
+  border: 1px solid var(--cinza-borda);
   display: flex;
   flex-flow: column;
-  margin: 0 auto;
-  max-width: 90%;
-  /* margin: 0 25vh; */
+  margin: 2vh auto;
+  padding: 3% 4%;
+  width: 40vw;
 }
 
 .form-label {
@@ -83,13 +66,12 @@ h1, h2 {
 
 .login-form {
   margin: 1vh auto 0;
-  width: 90%;
-  /* width: 50vh; */
+  width: 70%;
 }
 
 .login-container .text-muted {
   margin: 1.5vh auto;
-  max-width: 90%;
+  max-width: 70%;
   text-align: center;
 }
 
@@ -97,25 +79,33 @@ h1, h2 {
   margin: 2vh auto;
 }
 
-@media(min-width: 700px) {
+/* @media screen and (max-width: 480px) {
   .App-logo {
-    margin: 2vh auto;
+    margin: 1vh auto;
     text-align: center;
   }
-  
+
   .App-logo img {
-    /* height: 50vh; */
-    height: 45vh;
+    height: 25vh;
+    width: auto;
+  }
+
+  .button-verde, .button-verde:hover {
+    font-size: 1em !important;
+    padding: 2vw 3.5vh;
   }
 
   .login-container {
-    display: flex;
-    font-size: 20px;
-    flex-flow: column;
     margin: 2vh auto;
-    max-width: 60%;
-    /* margin: 0 25vh; */
-  } 
-}
-
-/* FIM PAG LOGIN */
+    padding: 1% 2%;
+    width: 80vw;
+  }
+} */
+/*
+@media screen  and (min-width: 768px) {
+  .login-container {
+    margin: 2vh auto;
+    padding: 1% 2%;
+    width: 70vw;
+  }
+} */
