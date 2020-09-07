@@ -9,3 +9,107 @@
   --verde-dende: #31b9a5;
   --verde-dois-dende: #61c190;
 }
+
+/* INICIO PAG LISTA PRODUTOS */
+.products-list-header {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 2vh 8vw 4vh;
+}
+
+.products-list-title {
+  border-bottom: 3px solid var(--laranja-dende);
+}
+
+.products-list-header .add-button-product {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0;
+  padding-top: 1vh;
+}
+
+.products-list-header .add-button-product img {
+  height: 10vh;
+}
+
+.products-list-header .add-button-product p {
+  font-size: 12pt;
+  line-height: 12pt;
+  margin-bottom: 0;
+  padding-top: 1vh;
+  text-align: center;
+}
+
+.products-grid {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 2vh 0 0 15vw;
+  width: 80vw;
+}
+
+.product-card {
+  background-color: white;
+  border: solid 1px var(--cinza-borda);
+  box-shadow: 2px 2px 5px var(--cinza-texto);
+  display: flex;
+  font-size: 0.8em;
+  flex-direction: column;
+  margin: 1vh auto 3vh;
+  padding: 3vh 2vw 1vh 8vw;
+  width: 50vh;
+}
+
+.product-card .product-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.product-card .product-card-header h4 {
+  color: var(--laranja-dende);
+  margin-top: 1.5vh;
+}
+
+.product-card .product-card-header button {
+  background: none;
+  border: none;
+}
+
+.product-card .product-card-header button img {
+  height: 30px;
+  align-self: top;
+}
+
+.product-card .product-price {
+  font-size: 18px;
+  font-weight: 300;
+  margin-top: 2vh;
+}
+
+@media (min-width: 700px) {
+  .products-list-header {
+    padding: 2vh 25vw 4vh;
+  }
+
+  .products-grid {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 2vh 15vw 2vh 0;
+    width: 80vw;
+  }
+
+  .product-card {
+    display: flex;
+    font-size: 1em;
+    flex-direction: column;
+    margin: 2vh 2vw;
+    padding: 3vh 2vw 1vh 6vh;
+  }
+}
+
+/* FIM PAG LISTA PRODUTOS */
+/* INICIO PAG DETALHE PRODUTO */

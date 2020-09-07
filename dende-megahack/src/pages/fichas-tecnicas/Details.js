@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import Header from '../../components/Header';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import { connect } from 'react-redux';
-import { useHistory } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
+import '../../css/products.css';
+import returnLogo from '../../images/icons/return-verde.svg';
+import Header from '../../components/Header';
 
 
 function Details(props) {
@@ -26,11 +28,15 @@ function Details(props) {
 
   return (
     <React.Fragment>
-  
       <Header />
+      <div className="products-list-header">
+        <h4 className="products-list-title">Detalhes do Produto</h4>
+        <Link className="add-button-product" to="/fichas-tecnicas/add">
+          <img alt="Voltar" src={returnLogo} height="95" />
+          <p>Voltar</p>
+        </Link>
+      </div>
       <React.Fragment>
-        <h1>Detalhes do Produto</h1>
-
         {product !== '' ? (
           <div>
             <p>{product.nameProduct}</p>
