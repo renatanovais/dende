@@ -23,13 +23,13 @@ function Order(props) {
   const dropdownClients = (param) => {
     return (
       <>
-      <Form.Control className="list-client-select" as="select" title="Clientes" onChange={(e) => {setClient(e.target.value); noClientsDisable(e)}}>
-        <option value="client">Cliente</option>
-        {param.map((client, i) => <option key={i} value={client.name}>{client.name}</option>)}
-      </Form.Control>
-      <Link className="link-add-client" to="/add-client">
-        <img alt="Add encomenda" src={addCliente} height="95" />
-      </Link>
+        <Form.Control className="list-client-select" as="select" title="Clientes" onChange={(e) => {setClient(e.target.value); noClientsDisable(e)}}>
+          <option value="client">Cliente</option>
+          {param.map((client, i) => <option key={i} value={client.name}>{client.name}</option>)}
+        </Form.Control>
+        <Link className="link-add-client" to="/add-client">
+          <img alt="Add encomenda" src={addCliente} height="95" />
+        </Link>
       </>
     );
   }
