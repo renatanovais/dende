@@ -1,78 +1,36 @@
 :root {
-  --laranja-dende: #f6833c;
+  --amarelo-dende: #ffd800;
   --azul-dende: #609bd2;
+  --cinza-borda: #d6d6d6;
+  --cinza-texto: #444444;
+  --cinza-fundo: #f2f2f2;
+  --laranja-dende: #f6833c;
+  --laranja-dende-transparent: #fcd1b6;
   --verde-dende: #31b9a5;
   --verde-dois-dende: #61c190;
-  --amarelo-dende: #ffd800;
-  --cinza-claro: #e5e5e5;
-  --laranja-dende-transparent: #fcd1b6;
-}
-
-a {
-  color: black;
-}
-
-a:hover {
-  color: gray;
-  text-decoration: none;
 }
 
 body {
-  margin: 0 auto;
-  /* text-align: center; */
-  font-size: 14pt;
+  font-family: 'Josefin Sans', sans-serif;
+  color: var(--cinza-texto);
 }
 
-h1, h2 {
-  padding-top: 2vh;
-}
-
-.button-laranja {
-  background-color: var(--laranja-dende);
-  border-color: var(--laranja-dende);
-  height: 3em;
-  margin-bottom: 2em;
-}
-
-.button-laranja:hover {
-  background-color: var(--verde-dende);
-  border-color: var(--verde-dende);
-  height: 3em;
-  margin-bottom: 2em;
-}
-
-.button-verde {
-  background-color: var(--verde-dende);
-  border-color: var(--verde-dende);
-  color: black;
-  font-size: 16pt;
-}
-
-.button-verde:hover {
-  background-color: var(--laranja-dende);
-  border-color: var(--laranja-dende);
-  color: gray;
-  margin-bottom: 2em;
-}
-
-/* HEADER */
 .header-comp {
   align-items: center;
-  background-color: var(--cinza-claro);
+  background-color: white;
   display: flex;
-  font-size: 12pt;
+/*   font-size: 12pt; */
   justify-content: space-around;
-  /* padding: 1vh 55vh 1vh; */
   padding: 1vh 5vw;
 }
 
 .header-comp #logo-img {
-  height: 50px;
+  height: 100px;
 }
 
 .header-comp #configs-img {
   margin-left: 1vh;
-  height: 35px;
+  height: 55px;
 }
 
 .header-configs {
@@ -81,13 +39,37 @@ h1, h2 {
 }
 
 .header-configs p {
-  /* background-color: var(--amarelo-dende); */
   border-radius: 10px;
   color: var(--laranja-dende);
-  font-size: 12px;
   margin-right: 1vh;
   margin-top: 3vh;
   padding: 0 1vw;
 }
 
-/* FIM HEADER */
+@media (max-width: 600px) {
+  .header-comp #logo-img {
+    height: 70px;
+  }
+  
+  .header-comp #configs-img {
+    margin-left: 1vh;
+    height: 40px;
+  }
+  
+}
+
+@media (min-width: 900px) {
+  .header-comp #logo-img {
+    height: 110px;
+  }
+  
+  .header-comp #configs-img {
+    margin-left: 1vh;
+    height: 55px;
+  }
+
+  .header-configs p {
+    font-size: 16pt;
+  }
+  
+}
