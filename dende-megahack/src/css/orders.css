@@ -163,6 +163,40 @@
 /* FIM CALENDARIO DE ENCOMENDAS */
 
 /* INICIO PAG ADD ENCOMENDA (ORDER) */
+.add-order-header {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 4vh 10vw 4vh 0;
+}
+
+.add-order-title {
+  border-bottom: 3px solid var(--laranja-dende);
+  margin: 2vh auto;
+  width: 50vw;
+}
+
+.add-order-header .link-add-client {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0;
+  padding-top: 1vh;
+}
+
+.add-order-header .link-add-client img {
+  height: 8vh;
+}
+
+.calendar-header .link-add-client p {
+  font-size: 8pt;
+  line-height: 12pt;
+  margin-bottom: 0;
+  padding-top: 1vh;
+  text-align: center;
+}
+
 .add-order-container {
   display: flex;
   font-size: 16px;
@@ -171,30 +205,13 @@
   max-width: 80%;
 }
 
-.add-order-title {
-  border-bottom: 3px solid var(--laranja-dende);
-  width: 20vw;
-  margin: 2vh auto;
-}
-
-.add-order-container .link-add-client {
-  align-items: center;
-  display: flex;
-  margin: 1vh 4vw;
-}
-
-.add-order-container .link-add-client img {
-  height: 8vh;
-}
-
-.add-order-container .link-add-client p {
+/* .add-order-container .link-add-client p {
   border-bottom: 1vh solid var(--verde-dende);
   font-weight: 300;
   margin: 0 4vw;
-}
+} */
 
 .add-order-container .list-client-select {
-  background-color: var(--verde-dende);
   border: none;
   color: var(--cinza-claro);
   margin: 2vh auto 0;
@@ -234,10 +251,39 @@
   padding: none;
 }
 
+.check-input-button:hover {
+  background-color: transparent;
+  border: none;
+  opacity: 0.7;
+}
+
+.check-input-button:disabled {
+  background-color: transparent;
+  opacity: 0.5;
+}
+
 .select-row {
   display: flex;
   margin: 2vh 5vw;
   justify-content: space-around;
+}
+
+.order-button {
+  margin: 2vh auto;
+}
+
+@media (min-width: 700px) {
+  .add-order-header {
+    padding: 4vh 25vw 4vh 5vw;
+  }
+
+  .add-order-title {
+    width: 18vw;
+  }
+
+  .add-order-container {
+    max-width: 60%;
+  }
 }
 
 /* FIM PAG CADASTRAR ENCOMENDA - SEM RESPONSIVIDADE */

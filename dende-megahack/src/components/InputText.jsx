@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { newItem } from '../redux/actions/index';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
+import '../css/products.css';
 import checkIcon from '../images/icons/check-verde-cinza.svg';
 
 
@@ -46,7 +47,7 @@ function TextInput(props) {
           onChange={(e) => setPrice(e.target.value)}
         />
       </Form.Group>
-      <Button className="button-verde check-input-button" onClick={() => {props.saveItem(item, quantity, unity, price);
+      <Button className="button-verde product-check-button" onClick={() => {props.saveItem(item, quantity, unity, price);
         setDisable(!disable);
       }} disabled={disable}>
         <img alt="Confirmar" src={checkIcon} height="40px" />

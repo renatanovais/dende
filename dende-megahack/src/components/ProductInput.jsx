@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-import checkIcon from '../images/icons/check-laranja-cinza.svg';
+import checkIcon from '../images/icons/check-verde-cinza.svg';
 import { newProduct } from '../redux/actions';
 
 function ProductInput(props) {
