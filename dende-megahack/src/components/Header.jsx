@@ -14,7 +14,7 @@ function Header(props) {
         </Link>
       </div>
       <div className="header-configs">
-        <p>{props.email}rnovaiscs@gmail.com
+        <p>{props.email}
         <img id="configs-img" alt="Configurações" src={configs} height="55px" />
         </p>
       </div>
