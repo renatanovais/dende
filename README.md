@@ -8,7 +8,11 @@
 
 <p>Como parte das entregas do <em>Mega Hack Women</em>, motivadas pelo seguinte problema: como incentivar o empreendedorismo feminino através da tecnologia.</p><br>
 
+<<<<<<< HEAD
 ![Dende](/logo-dende.png)
+=======
+![Dende](/dende-megahack/src/images/logos/logo_dende_fonte_laranja.png)
+>>>>>>> 3c406136a23390f7b977a0ca96cb47c3f1411b25
 
 **Dendê surge da vontade de facilitar a gestão dos negócios conduzidos por mulheres que empreendem no setor alimentício e parte dos seguintes pressupostos: planejamento, registro e visualização das principais ferramentas que auxiliam neste processo de gerenciamento.**
 
