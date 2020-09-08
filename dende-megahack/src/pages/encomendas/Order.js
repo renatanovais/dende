@@ -28,9 +28,6 @@ function Order(props) {
           <option value="client">Cliente</option>
           {param.map((client, i) => <option key={i} value={client.name}>{client.name}</option>)}
         </Form.Control>
-        <Link className="link-add-client" to="/add-client">
-          <img alt="Add encomenda" src={addCliente} height="95" />
-        </Link>
       </>
     );
   }
@@ -54,50 +51,56 @@ function Order(props) {
   return (
     <div>
       <Header />
-      <div className="add-order-container">
-        <div className="add-order-header">
+      <div className="add-order-header">
         <h4 className="add-order-title">Agendar Encomenda</h4>
+        <Link className="link-add-client" to="/add-client">
+          <img alt="Add encomenda" src={addCliente} height="95" />
+          {/* <p>Adicionar <br /> cliente</p> */}
+        </Link>
+      </div>
+      <div className="add-order-container">
         {clients.length > 0 ? dropdownClients(clients) :
           <Link className="add-button-client" to="/add-client">
             <img alt="Add encomenda" src={addCliente} />
             <p>Adicionar cliente</p>
           </Link>
         }
-      </div>
-      <Form>
-        <ProductInput name="Produto" qtde="Qtde" client={client} />
-        {(productList.length > 0) ? (
-          <div>
-            {productList.map((product, i) => i > 0 && i < 1 ? <ProductInput name={product.product} qtde={product.quantity} /> : <ProductInput name="Produto" qtde="Quantidade" />)}
-          </div>
-        ) : false}
-        <Form.Row className="select-row">
+        <Form>
+          <ProductInput name="Produto" qtde="Qtde" client={client} />
+          {(productList.length > 0) ? (
+            <div>
+              {productList.map((product, i) => i > 0 && i < 1 ? <ProductInput name={product.product} qtde={product.quantity} /> : <ProductInput name="Produto" qtde="Quantidade" />)}
+            </div>
+          ) : false}
+          <Form.Row className="select-row">
+            <Form.Group>
+              <Form.Label className="label-form">Prazo</Form.Label>
+              <Form.Control type="date" onChange={(e) => setDate(e.target.value)} disabled={disableByClients} />
+            </Form.Group>
+            <Form.Group>
+              <Form.Label className="label-form">Escolha a opção de entrega</Form.Label>
+              <Form.Control as="select" onChange={(e) => setDelivery(e.target.value)} disabled={disableByClients}>
+                <option value="">Selecione</option>
+                <option value="Entregar">Entregar</option>
+                <option value="Buscar">Buscar</option>
+              </Form.Control>
+            </Form.Group>
+          </Form.Row>
           <Form.Group>
-            <Form.Label className="label-form">Prazo</Form.Label>
-            <Form.Control type="date" onChange={(e) => setDate(e.target.value)} disabled={disableByClients} />
+            <Form.Label className="label-form">Mais Informações</Form.Label>
+            <Form.Control as="textarea" rows="4" placeholder="Detalhes ou mais informações" onChange={(e) => setDetails(e.target.value)} disabled={disableByClients} />
           </Form.Group>
-          <Form.Group>
-            <Form.Label className="label-form">Escolha a opção de entrega</Form.Label>
-            <Form.Control as="select" onChange={(e) => setDelivery(e.target.value)} disabled={disableByClients}>
-              <option value="">Selecione</option>
-              <option value="Entregar">Entregar</option>
-              <option value="Buscar">Buscar</option>
-            </Form.Control>
-          </Form.Group>
-        </Form.Row>
-        <Form.Group>
-          <Form.Label className="label-form">Mais Informações</Form.Label>
-          <Form.Control as="textarea" rows="4" placeholder="Detalhes ou mais informações" onChange={(e) => setDetails(e.target.value)} disabled={disableByClients} />
+        </Form>
+        <Form.Group className="order-button">
+          <Button className="button-verde" disabled={buttonDisable} onClick={() => {
+            registerOrder(productList, client, date, delivery, details)
+            history.push('/encomendas');
+            clearProducts();
+          }}>
+            Agendar
+          </Button>
         </Form.Group>
-      </Form>
-      <Button className="button-verde" disabled={buttonDisable} onClick={() => {
-        registerOrder(productList, client, date, delivery, details)
-        history.push('/encomendas');
-        clearProducts();
-      }}>
-        Agendar
-        </Button>
-    </div>
+      </div>
     </div >
   )
 }
