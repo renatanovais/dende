@@ -5,7 +5,7 @@
 > -**Natália Macedo** – <https://github.com/natmacedo><br>
 <p>Como parte das entregas do **Mega Hack Women**, motivadas pelo seguinte problema: como incentivar o empreendedorismo feminino através da tecnologia.</p><br>
 
-![Dende](https://ibb.co/q1XpbPZ)
+![Dende](/dende-megahack/src/images/logos/logo_dende_fonte_laranja.png)
 
 **Dendê surge da vontade de facilitar a gestão dos negócios conduzidos por mulheres que empreendem no setor alimentício e parte dos seguintes pressupostos: planejamento, registro e visualização das principais ferramentas que auxiliam neste processo de gerenciamento.**
 
