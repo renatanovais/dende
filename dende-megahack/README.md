@@ -1,14 +1,14 @@
-## Dendê
+# Dendê
 
 #### Esta aplicação foi desenvolvida pelas estudantes de desenvolvimento de software:
 
-> -**Marina Barcelos** – <https://github.com/marinabrcls><br>
-> -**Natália Macedo** – <https://github.com/natmacedo><br>
-> -**Renata Novais** – <https://github.com/RenataNovais/><br>
+> - **Marina Barcelos** – <https://github.com/marinabrcls><br>
+> - **Natália Macedo** – <https://github.com/natmacedo><br>
+> - **Renata Novais** – <https://github.com/RenataNovais/><br>
 
 <p>Como parte das entregas do <em>Mega Hack Women</em>, motivadas pelo seguinte problema: como incentivar o empreendedorismo feminino através da tecnologia.</p><br>
 
-![Dende](/logo-dende.png)
+<p align="center"><img alt="dende" src="/logo-dende.png"/></p>
 
 **Dendê surge da vontade de facilitar a gestão dos negócios conduzidos por mulheres que empreendem no setor alimentício e parte dos seguintes pressupostos: planejamento, registro e visualização das principais ferramentas que auxiliam neste processo de gerenciamento.**
 
