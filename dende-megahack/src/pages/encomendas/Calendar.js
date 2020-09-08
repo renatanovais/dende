@@ -31,7 +31,7 @@ function Calendar(props) {
   const [formatDate, setFormatDate] = useState();
   const [emptyMessage, setEmptyMessage] = useState('cadastradas');
   const [weekStart, weekEnd] = getWeekDates();
-  
+
   const getDate = (actualDate) => {
     const actualDay = actualDate.getDate();
     const actualMonth = (actualDate.getMonth() + 1);
@@ -49,7 +49,7 @@ function Calendar(props) {
       setFilterOrders(changeDate);
     }
   }
-  
+
   const showAll = () => {
     latestOrders(orders);
     setEmptyMessage('cadastradas')
@@ -99,7 +99,7 @@ function Calendar(props) {
       latestOrders(filterByMonth);
     };
   }
-  
+
   useEffect(() => {
     setFormatDate(getDate(actualDate));
     latestOrders(orders);
@@ -114,19 +114,18 @@ function Calendar(props) {
         </div>
         <Link className="add-button-calendar" to="/encomendas/add">
           <img alt="Add encomenda" src={addEncomenda} />
-          <p>Adicionar <br/> encomenda</p>
+          <p>Adicionar <br /> encomenda</p>
         </Link>
       </div>
+      <p className="filter-text">Filtrar por:</p>
       <div className="filter-buttons-container">
-        <div><p className="filter-text">Filtrar por:</p>
         <Button className="button-verde filter-button" onClick={() => filterDay(actualDate)}>Dia</Button>
         <Button className="button-verde filter-button" onClick={() => filterWeek()}>Semana</Button>
         <Button className="button-verde filter-button" onClick={() => filterMonth(actualDate)}>Mês</Button>
         <Button className="button-verde filter-button" onClick={() => showAll()}>Todas</Button>
-        </div>
-        <div className="calendar-grid">
+      </div>
+      <div className="calendar-grid">
         {filterOrders.length > 0 ? filterOrders.map((order, i) => <GridCalendar key={i} order={order} />) : <p>{`Não há encomendas ${emptyMessage}`}</p>}
-        </div>
       </div>
     </div>
   )

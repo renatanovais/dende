@@ -11,18 +11,18 @@
 }
 
 /* CSS AGENDA DE ENCOMENDAS */
-.info-calendar {
+.calendar-header {
   align-items: center;
   display: flex;
   justify-content: space-between;
-  padding: 1vh 8vw 3vh;
+  padding: 2vh 8vw 4vh;
 }
 
-.info-calendar .calendar-date {
+.calendar-header .calendar-date {
   border-bottom: 3px solid var(--laranja-dende);
 }
 
-.info-calendar .add-button-calendar {
+.calendar-header .add-button-calendar {
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -31,13 +31,13 @@
   padding-top: 1vh;
 }
 
-.info-calendar .add-button-calendar img {
-  height: 8vh;
+.calendar-header .add-button-calendar img {
+  height: 10vh;
 }
 
-.info-calendar .add-button-calendar p {
-  font-size: 12px;
-  line-height: 12px;
+.calendar-header .add-button-calendar p {
+  font-size: 12pt;
+  line-height: 12pt;
   margin-bottom: 0;
   padding-top: 1vh;
   text-align: center;
@@ -46,22 +46,20 @@
 .calendar-grid {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  margin: 2vh auto;
-  max-width: 90%;
+  margin: 2vh 0 0 15vw;
+  width: 80vw;
 }
 
 .calendar-card {
-  background-image: linear-gradient(
-    transparent,
-    var(--laranja-dende-transparent),
-    var(--laranja-dende)
-  );
-  border: none;
-  font-size: 15px;
-  height: 230px;
-  margin: 2vh 2vw;
-  width: 230px;
+  background-color: white;
+  border: solid 1px var(--cinza-borda);
+  box-shadow: 2px 2px 5px var(--cinza-texto);
+  display: flex;
+  font-size: 0.8em;
+  flex-direction: column;
+  margin: 1vh auto 4vh;
+  padding: 3vh 10vw 1vh 5vw;
+  width: 50vh;
 }
 
 .calendar-card .client-name {
@@ -89,25 +87,76 @@
   padding: 0;
 }
 
+.filter-buttons-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 1vh 5vh;
+}
+
+.filter-buttons-container .filter-button {
+  font-size: 0.8em;
+}
+
+.filter-text {
+  display: flex;
+  flex-direction: row;
+  padding: 2vh 5vh;
+  font-size: 0.8em;
+}
+
 @media (min-width: 700px) {
-  .info-calendar {
-    padding: 2vh 10vw 4vh;
+  .calendar-header {
+    padding: 2vh 25vw 4vh;
   }
 
-  .info-calendar .calendar-date {
-    font-size: 22px;
+  .calendar-header .calendar-date {
+    font-size: 21pt;
   }
 
-  .info-calendar .add-button-calendar img {
+  .calendar-header .add-button-calendar img {
     height: 10vh;
   }
 
-  .info-calendar .add-button-calendar p {
-    font-size: 14px;
+  .calendar-header .add-button-calendar p {
+    font-size: 14pt;
+  }
+
+  .calendar-grid {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 2vh 15vw 2vh 0;
+    width: 80vw;
+  }
+
+  .calendar-card {
+    display: flex;
+    font-size: 1em;
+    flex-direction: column;
+    margin: 2vh 2vw;
+    padding: 5vh 2vw 2vh 3vw;
+    width: 45vh;
   }
 
   .calendar-card .list-item {
     padding: 1vh 1vw 1vh 3vw;
+  }
+
+  .filter-buttons-container {
+    display: flex;
+    justify-content: space-around;
+    padding: 1vh 40vh;
+  }
+
+  .filter-buttons-container .filter-button {
+    font-size: 1.2em;
+  }
+
+  .filter-text {
+    display: flex;
+    flex-direction: row;
+    padding: 2vh 45vh;
+    font-size: 1.2em;
   }
 }
 
