@@ -19,7 +19,7 @@
 }
 
 .buttons-add-container img {
-  height: 75px;
+  height: 10vh;
   padding: 1vh 1vw;
 }
 
@@ -28,21 +28,28 @@
 }
 
 .home-buttons {
-  margin: 5vh 20vw 1vh;
+  display: flex;
+  flex-direction: column;
+  margin: 3vh 20vw 5vh;
   font-size: 12pt;
 }
 
- @media (min-width: 700px) {
+@media (min-width: 700px) {
   .buttons-add-container img {
-    height: 100px;
+    height: 15vh;
   }
 
   .buttons-add-container p {
-    font-size: 16pt;
+    font-size: 18pt;
   }
 
-  .home-buttons .link {
-  /*     margin: 5vh 20vw 1vh; */
-    font-size: 21pt;
+  .home-buttons {
+    display: flex;
+    flex-direction: column;
+    margin: 3vh 20vw 5vh;
+  }
+
+  .home-buttons .botao-especial {
+    font-size: 18pt;
   }
 }
