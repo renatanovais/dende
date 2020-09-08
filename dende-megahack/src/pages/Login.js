@@ -32,7 +32,7 @@ function Login(props) {
               <Form.Control className="login-form" type="email" placeholder="Email" onChange={(e) => setEmail(e.target.value)} />
               <Form.Text className="text-muted">
                 Seu e-mail está seguro conosco. Não iremos compartilhar seus dados.
-            </Form.Text>
+              </Form.Text>
             </Form.Group>
             <Form.Group controlId="formLogin">
               <Form.Label className="form-label">Senha:</Form.Label>

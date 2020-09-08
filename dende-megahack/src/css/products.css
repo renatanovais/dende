@@ -127,3 +127,37 @@
 .date-info {
   padding: 1.5vh 0 0;
 }
+
+.product-save-button {
+  margin: 3vh auto;
+}
+
+.product-save-button:disabled {
+  background-color: var(--verde-dende);
+}
+
+.info-link {
+  color: var(--cinza-texto);
+}
+
+.product-check-button {
+  background-color: transparent;
+  border: none;
+  margin: 4vh 1vh 1vh 0;
+  padding: none;
+}
+
+.product-check-button img:hover {
+  opacity: 0.6;
+}
+
+.product-check-button:hover {
+  background-color: transparent;
+  border: none;
+}
+
+.product-check-button:disabled {
+  background-color: transparent;
+  border: none;
+  opacity: 0.5;
+}

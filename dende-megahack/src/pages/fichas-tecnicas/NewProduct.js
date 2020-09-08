@@ -132,9 +132,9 @@ function NewProduct(props) {
           onChange={(e) => setImg(e.target.value)}
         />
         <Form.Text className="text-muted">
-          <Link to="https://pt-br.imgbb.com/">Saiba como obter a URL da sua imagem</Link>
+          <a className="info-link" target="blank" href="https://pt-br.imgbb.com/">Saiba como obter a URL da sua imagem</a>
         </Form.Text>
-        <Form.Group>
+        <Form.Group className="product-save-button">
           <Button
             className="button-verde"
             type="button"
