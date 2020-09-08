@@ -27,19 +27,22 @@ export default function Home() {
       </div>
       <div className="home-buttons">
         <Link to="/encomendas">
-          <Button className="button-laranja" size="1g" block>
+          <Button className="button-laranja botao-especial" size="1g" block>
             Agenda de Encomendas
           </Button>
+          <br /><br />
         </Link>
         <Link to="fichas-tecnicas">
-          <Button className="button-laranja" size="1g" block>
+          <Button className="button-laranja botao-especial" size="1g" block>
             Fichas Técnicas
           </Button>
+          <br /><br />
         </Link>
         <Link to="clientes">
-          <Button className="button-laranja" size="1g" block>
+          <Button className="button-laranja botao-especial" size="1g" block>
             Clientes
           </Button>
+          <br /><br />
         </Link>
       </div>
     </div>
