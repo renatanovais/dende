@@ -8,11 +8,7 @@
 
 <p>Como parte das entregas do <em>Mega Hack Women</em>, motivadas pelo seguinte problema: como incentivar o empreendedorismo feminino através da tecnologia.</p><br>
 
-<<<<<<< HEAD
 ![Dende](/logo-dende.png)
-=======
-![Dende](/dende-megahack/src/images/logos/logo_dende_fonte_laranja.png)
->>>>>>> 3c406136a23390f7b977a0ca96cb47c3f1411b25
 
 **Dendê surge da vontade de facilitar a gestão dos negócios conduzidos por mulheres que empreendem no setor alimentício e parte dos seguintes pressupostos: planejamento, registro e visualização das principais ferramentas que auxiliam neste processo de gerenciamento.**
 
@@ -31,8 +27,10 @@ Algumas melhorias previstas:
  + Página de cadastro do usuário;
  + Página de configurações desejadas;
 
-Este projeto foi desenvolvido em react com as seguintes bibliotecas: *react-redux* e *react-bootstrap*.
+Este projeto foi desenvolvido em *React*, com [Create React App](https://github.com/facebook/create-react-app), e utilizando as seguintes bibliotecas: *react-redux* e *react-bootstrap*.
 
 Caso queira contribuir/sugerir de melhorias faça o clone do repositório, crie sua branch e execute o ***npm install***. Ao final, abra um PR e aguarde a avaliação e possível aprovação!
 
 Muito obrigada e em caso de dúvidas, não deixe de entrar em contato com a gente!
+
+[Marina](https://www.linkedin.com/in/marina-barcelos/), [Natália](https://www.linkedin.com/in/natalia-macedo/) e [Renata](https://www.linkedin.com/in/renata-novais/).
